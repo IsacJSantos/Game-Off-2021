@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
-public class BaseEnemyController : MonoBehaviour
+public class BaseEnemyController : MonoBehaviour, Beatable
 {
     [SerializeField] protected EnemyTargetType targetType;
     [SerializeField] protected float maxLife;
@@ -37,18 +37,19 @@ public class BaseEnemyController : MonoBehaviour
     {
         Debug.LogWarning($"Attack not implemented in enemy {gameObject.name}. Or is calling base.Attack");
     }
-    public virtual void Hit(float value) 
+
+    public virtual void Hit(float value)
     {
         maxLife -= value;
 
-        if (maxLife <= 0) 
+        if (maxLife <= 0)
         {
             Die();
         }
-      
+
     }
 
-    public virtual void Die() 
+    public virtual void Die()
     {
         enemyMovement.doMove = false;
         gameObject.SetActive(false);
@@ -69,7 +70,7 @@ public class BaseEnemyController : MonoBehaviour
         }
     }
 
-  
+
 }
 [System.Serializable]
 public enum EnemyTargetType { Player, Anthill };
