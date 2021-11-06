@@ -69,7 +69,8 @@ public class BaseEnemyController : MonoBehaviour, Beatable
 
     public virtual void SetTarget(EnemyTargetType targetType)
     {
-        enemyMovement.target = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<Transform>();
+        _targetTransform = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<Transform>();
+        enemyMovement.target = _targetTransform;
     }
 
     bool CanAttack()
