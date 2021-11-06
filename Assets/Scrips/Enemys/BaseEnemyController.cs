@@ -5,23 +5,28 @@ public class BaseEnemyController : MonoBehaviour, Beatable
 {
     [SerializeField] protected EnemyTargetType targetType;
     [SerializeField] protected float maxLife;
+    [SerializeField] protected float AttackCooldown = 1;
+    [SerializeField] protected float attackForce;
+
     protected EnemyMovement enemyMovement;
 
-    Transform _playerTransform;
-    Transform _enemyTransform;
+    Transform _targetTransform;
 
-    private void Awake()
+    float time;
+    public virtual void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
-        _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        _enemyTransform = GameObject.FindGameObjectWithTag("Anthill").GetComponent<Transform>();
+        _targetTransform = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<Transform>();
+
+        if (AttackCooldown <= 0)
+            AttackCooldown = 1;
     }
-    private void Start()
+    public virtual void Start()
     {
         SetTarget(targetType);
         enemyMovement.doMove = true;
     }
-    private void Update()
+    public virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -32,10 +37,17 @@ public class BaseEnemyController : MonoBehaviour, Beatable
         {
             Hit(1);
         }
+
+        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01)
+            Attack();
     }
     public virtual void Attack()
     {
+        if (!CanAttack()) return;
+
+        time = Time.time;
         Debug.LogWarning($"Attack not implemented in enemy {gameObject.name}. Or is calling base.Attack");
+        _targetTransform.gameObject.GetComponent<Beatable>()?.Hit(attackForce);
     }
 
     public virtual void Hit(float value)
@@ -57,19 +69,15 @@ public class BaseEnemyController : MonoBehaviour, Beatable
 
     public virtual void SetTarget(EnemyTargetType targetType)
     {
-        switch (targetType)
-        {
-            case EnemyTargetType.Player:
-                enemyMovement.target = _playerTransform.position;
-                break;
-            case EnemyTargetType.Anthill:
-                enemyMovement.target = _enemyTransform.position;
-                break;
-            default:
-                break;
-        }
+        enemyMovement.target = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<Transform>();
     }
 
+    bool CanAttack()
+    {
+        return Time.time >= time + AttackCooldown &&
+            enemyMovement.target != null &&
+            enemyMovement.doMove == true;
+    }
 
 }
 [System.Serializable]
