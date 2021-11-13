@@ -14,26 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 5000
+    waveTurnsDelay: 3000
     waveTurns:
     - Enemyreferences:
-      - Isac
-      - Smash
-      - Lau
+      - Enemys/enemy1
+      - Enemys/enemy2
+      - Enemys/enemy3
     - Enemyreferences:
-      - Isac
-      - Isac
-      - Isac
-      - Isac
-      - Smash
+      - Enemys/enemy2
+      - Enemys/enemy1
     - Enemyreferences:
-      - Isac2
-      - Isac2
-      - Lau
-      - Lau
-      - Isac2
-      - Smash2
-      - Smash2
-      - Smash2
-      - Smash2
-      - Lau
+      - Enemys/enemy2
+      - Enemys/enemy3
+      - Enemys/enemy1

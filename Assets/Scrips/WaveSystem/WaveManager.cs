@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] int waveCount;
+    [SerializeField] int waveCount = 1;
     [SerializeField] ManualWave[] manualWaves;
     [SerializeField] Wave actualWave;
+    [SerializeField] Transform[] spawnPoints;
 
     int spawnDelay = 1000;
 
@@ -24,12 +25,6 @@ public class WaveManager : MonoBehaviour
         {
             StartManualWave();
         }
-        else
-        {
-            // Create Wave
-        }
-
-
     }
     async void StartManualWave()
     {
@@ -38,6 +33,7 @@ public class WaveManager : MonoBehaviour
             actualWave = manualWaves[i].wave;
             print($"Wave number: {actualWave.waveNumber}");
             await StartWaveTurn(actualWave.waveTurns);
+            waveCount++;
         }
 
     }
@@ -59,6 +55,8 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < references.Length; i++)
         {
             print(references[i]);
+            int randomPoint = Random.Range(0, spawnPoints.Length);
+            Instantiate(Resources.Load(references[i]), spawnPoints[randomPoint].position, Quaternion.identity);
             await Task.Delay(spawnDelay);
         }
         return true;
