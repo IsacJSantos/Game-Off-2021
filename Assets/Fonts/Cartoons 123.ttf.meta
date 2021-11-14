@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e69f78e54a1be374ca0de78ab103c88f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Cartoons 123
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b5d85566ec689a34f8f4bfef2a45c383, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
