@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Events : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region PlayerEvents
+    public static FloatEvent OnImprovePlayerLife;
+    #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public delegate void SimpleEvent();
+    public delegate void IntEvent(int i);
+    public delegate void FloatEvent(float s);
+    public delegate void BoolEvent(bool b);
 }
