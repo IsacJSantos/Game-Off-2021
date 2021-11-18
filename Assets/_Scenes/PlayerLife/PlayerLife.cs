@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LifeManager : MonoBehaviour
+public class PlayerLife : MonoBehaviour
 {
     public float MaxLife { get { return _maxLife; } }
     public float Life
