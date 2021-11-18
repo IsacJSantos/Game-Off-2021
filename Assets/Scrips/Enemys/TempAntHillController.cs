@@ -4,19 +4,18 @@ using UnityEngine.UI;
 public class TempAntHillController : MonoBehaviour, Beatable
 {
 
-    public Image fillFife;
-    public float maxLife = 50;
-    public float life = 50;
+    public Image fillLife;
+    public BaseLifeSystem anthillLife;
     public void Hit(float value)
     {
-        if (life <= 0) return;
+        if (anthillLife.Life <= 0) return;
 
-        life -= value;
+        anthillLife.Life -= value;
 
-        if (life < 0)
-            life = 0;
+        if (anthillLife.Life < 0)
+            anthillLife.Life = 0;
 
-        fillFife.fillAmount = ((1 / maxLife) * life);
+        fillLife.fillAmount = ((1 / anthillLife.MaxLife) * anthillLife.Life);
     }
 
 

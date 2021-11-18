@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class PlayerLife : MonoBehaviour
+public class BaseLifeSystem : MonoBehaviour
 {
     public float MaxLife { get { return _maxLife; } }
     public float Life
     {
-        get 
+        get
         {
             return _currentLife;
         }
-        set 
+        set
         {
             _currentLife = value;
-            if (_currentLife <= 0) 
+            if (_currentLife <= 0)
             {
                 _currentLife = 0;
                 _isAlive = false;
@@ -26,27 +26,28 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] float _maxLife;
     [SerializeField] bool _isAlive;
 
-    private void Awake()
+    public virtual void Awake()
     {
-        Events.OnImprovePlayerLife += ImproveMaxLife;
+     
     }
 
-    private void Start()
+    public virtual void Start()
     {
         _currentLife = _maxLife;
         _isAlive = true;
     }
 
-    private void OnDestroy()
+    public virtual void OnDestroy()
     {
-        Events.OnImprovePlayerLife -= ImproveMaxLife;
+      
     }
 
 
-    void ImproveMaxLife(float amount)
+    public virtual void ImproveMaxLife(float amount)
     {
+        print("Improve");
         float percent = amount / 100;
         _maxLife += _baseLife * percent;
     }
-   
+
 }

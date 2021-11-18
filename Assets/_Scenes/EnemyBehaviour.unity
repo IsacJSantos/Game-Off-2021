@@ -11978,6 +11978,7 @@ GameObject:
   - component: {fileID: 618879646}
   - component: {fileID: 618879645}
   - component: {fileID: 618879647}
+  - component: {fileID: 618879648}
   m_Layer: 0
   m_Name: Anthill
   m_TagString: Anthill
@@ -12078,9 +12079,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f438fe2520d9590419cd4aeb214e644a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillFife: {fileID: 1642391205}
-  maxLife: 50
-  life: 50
+  fillLife: {fileID: 1642391205}
+  anthillLife: {fileID: 618879648}
+--- !u!114 &618879648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618879643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da5aebf9e26d0c47a9560e2f06a11a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseLife: 20
+  _currentLife: 0
+  _maxLife: 25
+  _isAlive: 0
 --- !u!1 &662575269
 GameObject:
   m_ObjectHideFlags: 0
@@ -13978,12 +13994,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756693511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81fa48659b8f7f7468b686b78d9fd74e, type: 3}
+  m_Script: {fileID: 11500000, guid: 493c59108cfed434792299c59e92d850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _baseLife: 10
   _currentLife: 0
-  _maxLife: 10
+  _maxLife: 20
   _isAlive: 0
 --- !u!114 &1756693516
 MonoBehaviour:
@@ -13997,7 +14013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee08c1ec43811c43aa9e4852d89c3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillFife: {fileID: 971244194}
+  fillLife: {fileID: 971244194}
   playerLife: {fileID: 1756693515}
 --- !u!1 &1814572770
 GameObject:
