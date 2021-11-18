@@ -4,18 +4,18 @@ using UnityEngine;
 public class TempPlayerController : MonoBehaviour, Beatable
 {
     public Image fillFife;
-    public LifeManager lifeManager;
+    public PlayerLife playerLife;
 
     public void Hit(float value)
     {
-        if (lifeManager.Life <= 0) return;
+        if (playerLife.Life <= 0) return;
 
-        lifeManager.Life  -= value;
+        playerLife.Life  -= value;
 
-        if (lifeManager.Life < 0)
-            lifeManager.Life = 0;
+        if (playerLife.Life < 0)
+            playerLife.Life = 0;
 
-        fillFife.fillAmount = ((1 / lifeManager.MaxLife) * lifeManager.Life);
+        fillFife.fillAmount = ((1 / playerLife.MaxLife) * playerLife.Life);
     }
 
 

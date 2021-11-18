@@ -13984,6 +13984,7 @@ MonoBehaviour:
   _baseLife: 10
   _currentLife: 0
   _maxLife: 10
+  _isAlive: 0
 --- !u!114 &1756693516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13997,7 +13998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillFife: {fileID: 971244194}
-  lifeManager: {fileID: 1756693515}
+  playerLife: {fileID: 1756693515}
 --- !u!1 &1814572770
 GameObject:
   m_ObjectHideFlags: 0
