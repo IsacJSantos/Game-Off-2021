@@ -1,4 +1,4 @@
-public interface Beatable
+public interface IBeatable
 {
     public void Hit(float value);
 }

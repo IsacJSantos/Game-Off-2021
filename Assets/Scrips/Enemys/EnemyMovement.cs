@@ -6,8 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public bool doMove;
-    public Transform target;
-
+    public Vector3 target;
+    NavMeshHit meshHit;
     public float TargetDistance { get { return agent.remainingDistance; } }
     public float StopDistance { get { return agent.stoppingDistance; } }
     private void Awake()
@@ -17,8 +17,9 @@ public class EnemyMovement : MonoBehaviour
   
     void Update()
     {
-        if (doMove && target != null)
-            Move(target.position);
+       if (doMove && target != null)
+            Move(target);
+    
     }
 
     void Move(Vector3 target)

@@ -1,10 +1,16 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class TempPlayerController : MonoBehaviour, Beatable
+public class TempPlayerController : MonoBehaviour, IBeatable, IAgentTarget
 {
     public Image fillLife;
     public BaseLifeSystem playerLife;
+    
+    [SerializeField] BoxCollider _boxCollider;
+    public Vector3 GetClosestPoint(Vector3 objectPos)
+    {
+       return _boxCollider.ClosestPointOnBounds(objectPos);
+    }
 
     public void Hit(float value)
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,7 +10,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
 
     int spawnDelay = 1000;
-
+ 
+    private void OnApplicationQuit()
+    {
+        tokenSource.Cancel();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -28,6 +32,8 @@ public class WaveManager : MonoBehaviour
     }
     async void StartManualWave()
     {
+
+        tokenSource.Token.ThrowIfCancellationRequested();
         for (int i = 0; i < manualWaves.Length; i++)
         {
             actualWave = manualWaves[i].wave;

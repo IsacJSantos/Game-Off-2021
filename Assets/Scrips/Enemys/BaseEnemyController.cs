@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
-public class BaseEnemyController : MonoBehaviour, Beatable
+public class BaseEnemyController : MonoBehaviour, IBeatable
 {
     [SerializeField] protected EnemyTargetType targetType;
     [SerializeField] protected float maxLife;
@@ -47,7 +47,7 @@ public class BaseEnemyController : MonoBehaviour, Beatable
 
         time = Time.time;
         Debug.LogWarning($"Attack not implemented in enemy {gameObject.name}. Or is calling base.Attack");
-        _targetTransform.gameObject.GetComponent<Beatable>()?.Hit(attackForce);
+        _targetTransform.gameObject.GetComponent<IBeatable>()?.Hit(attackForce);
     }
 
     public virtual void Hit(float value)
@@ -69,8 +69,8 @@ public class BaseEnemyController : MonoBehaviour, Beatable
 
     public virtual void SetTarget(EnemyTargetType targetType)
     {
-        _targetTransform = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<Transform>();
-        enemyMovement.target = _targetTransform;
+        Vector3 pos = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IAgentTarget>().GetClosestPoint(transform.position);
+        enemyMovement.target = pos;
     }
 
     bool CanAttack()

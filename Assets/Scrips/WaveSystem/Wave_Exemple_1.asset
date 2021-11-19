@@ -19,11 +19,13 @@ MonoBehaviour:
     - Enemyreferences:
       - Enemys/enemy1
       - Enemys/enemy2
-      - Enemys/enemy3
+      - Enemys/enemy2
     - Enemyreferences:
       - Enemys/enemy2
       - Enemys/enemy1
     - Enemyreferences:
       - Enemys/enemy2
-      - Enemys/enemy3
-      - Enemys/enemy1
+      - Enemys/enemy2
+      - Enemys/enemy2
+      - Enemys/enemy2
+      - Enemys/enemy2

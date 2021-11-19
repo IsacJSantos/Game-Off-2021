@@ -17,23 +17,17 @@ MonoBehaviour:
     waveTurnsDelay: 3000
     waveTurns:
     - Enemyreferences:
-      - Isac
-      - Smash
-      - Lau
+      - Enemys/enemy1
+      - Enemys/enemy2
+      - Enemys/enemy2
     - Enemyreferences:
-      - Isac
-      - Lau
-      - Lay
-      - Isac
+      - Enemys/enemy1
+      - Enemys/enemy2
+      - Enemys/enemy1
+      - Enemys/enemy2
     - Enemyreferences:
-      - Isac2
-      - Isac2
-      - Lau
-      - Lau
-      - Isac2
-    - Enemyreferences:
-      - Romulao
-      - Romulao
-      - Romulao2
-      - Romulao3
-      - Romulao4
+      - Enemys/enemy1
+      - Enemys/enemy1
+      - Enemys/enemy2
+      - Enemys/enemy2
+      - Enemys/enemy2
