@@ -11,10 +11,7 @@ public class WaveManager : MonoBehaviour
 
     int spawnDelay = 1000;
  
-    private void OnApplicationQuit()
-    {
-        tokenSource.Cancel();
-    }
+ 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
