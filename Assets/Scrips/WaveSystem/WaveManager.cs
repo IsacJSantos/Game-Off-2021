@@ -29,8 +29,6 @@ public class WaveManager : MonoBehaviour
     }
     async void StartManualWave()
     {
-
-        tokenSource.Token.ThrowIfCancellationRequested();
         for (int i = 0; i < manualWaves.Length; i++)
         {
             actualWave = manualWaves[i].wave;
