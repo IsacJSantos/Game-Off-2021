@@ -45,7 +45,6 @@ public class BaseLifeSystem : MonoBehaviour
 
     public virtual void ImproveMaxLife(float amount)
     {
-        print("Improve");
         float percent = amount / 100;
         _maxLife += _baseLife * percent;
     }
