@@ -2,6 +2,6 @@
 public class Wave
 {
     public int waveNumber;
-    public int waveTurnsDelay;
+    public float waveTurnsDelay;
     public WaveTurn[] waveTurns;
 }

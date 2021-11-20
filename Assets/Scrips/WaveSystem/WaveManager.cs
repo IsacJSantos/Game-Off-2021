@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -9,9 +10,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Wave actualWave;
     [SerializeField] Transform[] spawnPoints;
 
-    int spawnDelay = 1000;
- 
- 
+    float spawnDelay = 1.5f;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -24,42 +25,40 @@ public class WaveManager : MonoBehaviour
     {
         if (manualWaves != null && manualWaves.Length > 0)
         {
-            StartManualWave();
+            StartCoroutine(StartManualWave());
         }
     }
-    async void StartManualWave()
+    IEnumerator StartManualWave()
     {
         for (int i = 0; i < manualWaves.Length; i++)
         {
             actualWave = manualWaves[i].wave;
             print($"Wave number: {actualWave.waveNumber}");
-            await StartWaveTurn(actualWave.waveTurns);
+            yield return StartCoroutine(StartWaveTurn(actualWave.waveTurns));
             waveCount++;
         }
 
     }
-    async Task<bool> StartWaveTurn(WaveTurn[] waveTurns)
+    IEnumerator StartWaveTurn(WaveTurn[] waveTurns)
     {
         for (int i = 0; i < waveTurns.Length; i++)
         {
             print("Waiting for next wave turn");
 
-            await Task.Delay(actualWave.waveTurnsDelay);
+            yield return new WaitForSeconds(actualWave.waveTurnsDelay);
 
-            await SpawnEnemys(waveTurns[i].Enemyreferences);
+            yield return StartCoroutine(SpawnEnemys(waveTurns[i].Enemyreferences));
         }
         print("End of wave turns");
-        return true;
     }
-    async Task<bool> SpawnEnemys(string[] references)
+    IEnumerator SpawnEnemys(string[] references)
     {
         for (int i = 0; i < references.Length; i++)
         {
             print(references[i]);
             int randomPoint = Random.Range(0, spawnPoints.Length);
             Instantiate(Resources.Load(references[i]), spawnPoints[randomPoint].position, Quaternion.identity);
-            await Task.Delay(spawnDelay);
+            yield return new WaitForSeconds(spawnDelay);
         }
-        return true;
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3892931518386921229}
   - component: {fileID: 1249933357790121783}
   m_Layer: 0
-  m_Name: EnemyController
+  m_Name: enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3892931518386921234}
   doMove: 0
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
 --- !u!114 &1249933357790121783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,9 +84,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 1
-  maxLife: 0
+  maxLife: 10
   AttackCooldown: 1
-  attackForce: 0
+  attackForce: 2
 --- !u!1 &3892931519643569076
 GameObject:
   m_ObjectHideFlags: 0

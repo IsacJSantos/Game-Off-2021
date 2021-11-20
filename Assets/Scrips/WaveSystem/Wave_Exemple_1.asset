@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 3000
+    waveTurnsDelay: 3
     waveTurns:
     - Enemyreferences:
       - Enemys/enemy1

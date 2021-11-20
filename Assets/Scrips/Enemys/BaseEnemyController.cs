@@ -28,25 +28,28 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     }
     public virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        /*  if (Input.GetKeyDown(KeyCode.K))
+          {
+              targetType = targetType == EnemyTargetType.Anthill ? EnemyTargetType.Player : EnemyTargetType.Anthill;
+              SetTarget(targetType);
+          }
+          if (Input.GetKeyDown(KeyCode.J))
+          {
+              Hit(1);
+          }
+        */
+        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01) 
         {
-            targetType = targetType == EnemyTargetType.Anthill ? EnemyTargetType.Player : EnemyTargetType.Anthill;
-            SetTarget(targetType);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Hit(1);
-        }
-
-        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01)
+            print($"{enemyMovement.TargetDistance} {enemyMovement.StopDistance}");
             Attack();
+        }
+           
     }
     public virtual void Attack()
-    {
+    {    
         if (!CanAttack()) return;
 
         time = Time.time;
-        Debug.LogWarning($"Attack not implemented in enemy {gameObject.name}. Or is calling base.Attack");
         _targetTransform.gameObject.GetComponent<IBeatable>()?.Hit(attackForce);
     }
 
