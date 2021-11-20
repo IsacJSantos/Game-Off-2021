@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1192314958136853838}
   - component: {fileID: 5825302471152010809}
   m_Layer: 5
-  m_Name: DecreaseReloadTempCard
+  m_Name: DecreaseReloadDelayCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,4 +280,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fdea621f0c8794e9a607550984644e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType: 0
+  cardType: 3

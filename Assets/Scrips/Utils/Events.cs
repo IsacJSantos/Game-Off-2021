@@ -3,15 +3,22 @@ using UnityEngine;
 public class Events : MonoBehaviour
 {
     #region PlayerEvents
-    public static FloatEvent OnImprovePlayerLife;
+ 
     #endregion
     #region AnthillEvents
-    public static FloatEvent OnImproveAnthillLife;
+ 
     #endregion
 
     #region CardsManager
     public static SimpleEvent OnShowCards;
     public static SimpleEvent OnCardClicked;
+
+    public static FloatEvent OnImproveAnthillLife;
+    public static FloatEvent OnImprovePlayerLife;
+    public static SimpleEvent OnImproveDamage;
+    public static SimpleEvent OnImproveMagazine;
+    public static SimpleEvent OnDecreaseAbilityCooldown;
+    public static SimpleEvent OnDecreaseReloadDelay;
     #endregion
 
     public delegate void SimpleEvent();
