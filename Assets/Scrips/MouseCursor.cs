@@ -19,8 +19,8 @@ public class MouseCursor : MonoBehaviour
 
     void Update()
     {
-        Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = cursorPosition;
+        Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(cursorPosition.x,transform.position.y,cursorPosition.z);
        /* if (Input.GetKeyDown(KeyCode.Z))
         {
             ChangeCursor();

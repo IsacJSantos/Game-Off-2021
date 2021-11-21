@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/Menu.unity
     guid: 32e9167b3bd0fe645952dbb3ad326254
   - enabled: 1
-    path: Assets/_Scenes/EnemyBehaviour.unity
+    path: Assets/_Scenes/GamePlay.unity
     guid: 6d8cb673e5033554382d708f94965a6e
   m_configObjects: {}
