@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseCursor : MonoBehaviour
-{
-   
+{ 
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
     private SpriteRenderer spriteRenderer;
