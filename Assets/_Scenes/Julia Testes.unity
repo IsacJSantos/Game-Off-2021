@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d75087f4dd4de499dc8e69c93cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCursor: {fileID: 7530646743693238626}
+  newCursor: {fileID: 0}
 --- !u!212 &353482156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1301,6 +1301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 7530646743680424745, guid: fd62facdf865f3a4d88563a184c05f5b, type: 3}
+      propertyPath: m_TagString
+      value: Cursor
+      objectReference: {fileID: 0}
     - target: {fileID: 7530646743680424746, guid: fd62facdf865f3a4d88563a184c05f5b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1347,14 +1351,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd62facdf865f3a4d88563a184c05f5b, type: 3}
---- !u!114 &7530646743693238626 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5086792229132003510, guid: fd62facdf865f3a4d88563a184c05f5b, type: 3}
-  m_PrefabInstance: {fileID: 7530646743693238625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa4cb2dc052bba4c8372e046753f90f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

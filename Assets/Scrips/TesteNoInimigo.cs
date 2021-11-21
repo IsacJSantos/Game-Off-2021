@@ -6,6 +6,10 @@ public class TesteNoInimigo : MonoBehaviour
 {
    public MouseCursor newCursor;
 
+    private void Start()
+    {
+        newCursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<MouseCursor>();
+    }
 
     void OnMouseOver()
     {
