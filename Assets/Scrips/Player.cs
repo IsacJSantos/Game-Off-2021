@@ -23,8 +23,7 @@ public class Player : MonoBehaviour
         movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         movement = Vector3.ClampMagnitude(movement, 1.0f) * speed * Time.deltaTime; //prevenir bug da velocidade maior na diagonal
 
-        if (movement == Vector3.zero)
-            rb.velocity = Vector3.zero;
+        
 
         //coletar inputs da mira
         Vector3 aimPos = Input.mousePosition - Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, 0.0f, transform.position.z));
@@ -38,6 +37,7 @@ public class Player : MonoBehaviour
     {
         //movimentar personagem
         rb.velocity = movement;
+        print(rb.velocity);
         //transform.position = transform.position + movement * Time.fixedDeltaTime * speed;
     }
 }
