@@ -4,39 +4,36 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float speed = 3f;
 
-    private Rigidbody2D rb2d;
-    Vector2 movement;
+    Vector3 movement;
+    [SerializeField] float speed;
+    [SerializeField] float addAngle = 270.0f;
 
-    Vector2 mousePos;
-    
-
-    private void Start()
+    private void Update()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        ProcessInputs();
+        //AimAndShoot();
+        Move();
     }
 
-    void Update()
+    private void ProcessInputs()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        //coletar inputs para movimento do personagem
+        movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //alinhar a rotação do personagem conforme a mira
+        //https://www.youtube.com/watch?v=Geb_PnF1wOk&t=63s
+        //https://stackoverflow.com/questions/59234157/make-character-look-at-mouse-in-unity
 
-        transform.Translate(movement * Time.deltaTime * speed);
-        /*  var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
-
-
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, 0.0f, transform.position.z));
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        angle = angle + addAngle;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
-        Vector2 lookDir = mousePos - rb2d.position;
-        float angle = Mathf.Atan2(lookDir.y,lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb2d.rotation = angle;
+        //movimentar personagem
+        transform.position = transform.position + movement * Time.deltaTime * speed;
     }
-
 }
