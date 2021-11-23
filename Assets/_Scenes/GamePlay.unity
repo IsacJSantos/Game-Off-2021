@@ -13464,10 +13464,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697802, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: speed
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13511,10 +13507,6 @@ PrefabInstance:
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212429867364751209, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_Constraints
-      value: 116
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b385b53abaccf174986a15d602a360e0, type: 3}
