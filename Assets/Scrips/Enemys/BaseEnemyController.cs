@@ -11,6 +11,8 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     protected EnemyMovement enemyMovement;
 
     Transform _targetTransform;
+    IAgentTarget agentTarget;
+    IBeatable beatableTarget;
 
     float time;
     public virtual void Awake()
@@ -38,19 +40,21 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
               Hit(1);
           }
         */
-        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01) 
+        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01)
         {
-            print($"{enemyMovement.TargetDistance} {enemyMovement.StopDistance}");
+            // print($"{enemyMovement.TargetDistance} {enemyMovement.StopDistance}");
             Attack();
         }
-           
+       
+        Move();
     }
     public virtual void Attack()
-    {    
-        if (!CanAttack()) return;
+    {
+        print("Attack");
+        if (!CanAttack()) { print("return"); return; }
 
         time = Time.time;
-        _targetTransform.gameObject.GetComponent<IBeatable>()?.Hit(attackForce);
+        beatableTarget?.Hit(attackForce);
     }
 
     public virtual void Hit(float value)
@@ -63,6 +67,10 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         }
 
     }
+    void Move()
+    {
+        enemyMovement.agent.SetDestination(agentTarget.GetClosestPoint(transform.position));
+    }
 
     public virtual void Die()
     {
@@ -72,8 +80,8 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
     public virtual void SetTarget(EnemyTargetType targetType)
     {
-        Vector3 pos = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IAgentTarget>().GetClosestPoint(transform.position);
-        enemyMovement.target = pos;
+        agentTarget = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IAgentTarget>();
+        beatableTarget = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IBeatable>();
     }
 
     bool CanAttack()
