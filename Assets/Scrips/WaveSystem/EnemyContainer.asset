@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ce541600a71a04881d5fc81498a82e, type: 3}
+  m_Name: EnemyContainer
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 3892931518386921233, guid: 59b30ab6ace151448b338fc23881cb30, type: 3}
+  - {fileID: 3892931518386921233, guid: 7b281ba4bf1a0914eb3fee14fcfb64b4, type: 3}

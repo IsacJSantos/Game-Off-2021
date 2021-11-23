@@ -211,6 +211,7 @@ MonoBehaviour:
   _bodyTransform: {fileID: 2194387946597745455}
   _speed: 250
   _bodyRb: {fileID: 2699860103369245866}
+  _bodyCollider: {fileID: 7147597869615698632}
 --- !u!1 &5214965858307240448
 GameObject:
   m_ObjectHideFlags: 0

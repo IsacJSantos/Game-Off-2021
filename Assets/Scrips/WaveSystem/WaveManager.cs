@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] ManualWave[] manualWaves;
     [SerializeField] Wave actualWave;
     [SerializeField] Transform[] spawnPoints;
+    [SerializeField] EnemysContainer enemysContainer;
 
     float spawnDelay = 1.5f;
 
@@ -47,18 +48,26 @@ public class WaveManager : MonoBehaviour
 
             yield return new WaitForSeconds(actualWave.waveTurnsDelay);
 
-            yield return StartCoroutine(SpawnEnemys(waveTurns[i].Enemyreferences));
+            yield return StartCoroutine(SpawnEnemys(waveTurns[i].EnemyTypes));
         }
         print("End of wave turns");
     }
-    IEnumerator SpawnEnemys(string[] references)
+    IEnumerator SpawnEnemys(EnemySpawn[] enemys)
     {
-        for (int i = 0; i < references.Length; i++)
+        for (int i = 0; i < enemys.Length; i++)
         {
-            print(references[i]);
-            int randomPoint = Random.Range(0, spawnPoints.Length);
-            Instantiate(Resources.Load(references[i]), spawnPoints[randomPoint].position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnDelay);
+            for (int j = 0; j < enemys[i].amout; j++)
+            {
+                int randomPoint = Random.Range(0, spawnPoints.Length);
+                Instantiate(GetEnemyPrefab((int)enemys[i].enemyType), spawnPoints[randomPoint].position, Quaternion.identity);
+                yield return new WaitForSeconds(spawnDelay);
+            }
+
         }
+    }
+
+    GameObject GetEnemyPrefab(int index)
+    {
+        return enemysContainer.enemyList[index];
     }
 }

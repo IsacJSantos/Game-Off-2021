@@ -13464,6 +13464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5214965857712697800, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -15858,6 +15862,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: enemysContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: bf6f0116ace070647b990fd35147710e, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 883b233147430354bba196e00d24610a, type: 2}
     - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 

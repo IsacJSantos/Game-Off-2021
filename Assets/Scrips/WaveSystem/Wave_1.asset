@@ -10,22 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6a9650bd5ab0648b8873d7e340dbf0, type: 3}
-  m_Name: Wave_Exemple_3
+  m_Name: Wave_1
   m_EditorClassIdentifier: 
   wave:
-    waveNumber: 0
-    waveTurnsDelay: 3000
+    waveNumber: 1
+    waveTurnsDelay: 10
     waveTurns:
-    - Enemyreferences:
-      - Enemys/enemy1
-      - Enemys/enemy1
-      - Enemys/enemy1
-      - Enemys/enemy1
-      - Enemys/enemy1
-      - Enemys/enemy2
-    - Enemyreferences:
-      - Enemys/enemy3
-      - Enemys/enemy3
-    - Enemyreferences: []
-    - Enemyreferences: []
-    - Enemyreferences: []
+    - EnemyTypes:
+      - amout: 3
+        enemyType: 0
+      - amout: 2
+        enemyType: 1
+    - EnemyTypes:
+      - amout: 4
+        enemyType: 0
+      - amout: 2
+        enemyType: 1
+    - EnemyTypes:
+      - amout: 5
+        enemyType: 0
+      - amout: 4
+        enemyType: 1

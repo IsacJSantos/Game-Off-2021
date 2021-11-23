@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IAgentTarget
 {
     [SerializeField] Transform _bodyTransform;
     [SerializeField] float _speed;
     [SerializeField] Rigidbody _bodyRb;
-
+    [SerializeField] Collider _bodyCollider;
     Vector3 movement;  
     float addAngle = 270.0f;
     
@@ -40,5 +40,10 @@ public class Player : MonoBehaviour
     {
         //movimentar personagem
         _bodyRb.velocity = movement;
+    }
+
+    public Vector3 GetClosestPoint(Vector3 objectPos)
+    {
+        return _bodyCollider.ClosestPointOnBounds(objectPos);
     }
 }
