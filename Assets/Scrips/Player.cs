@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
     {
         //movimentar personagem
         rb.velocity = movement;
-        print(rb.velocity);
         //transform.position = transform.position + movement * Time.fixedDeltaTime * speed;
     }
 }
