@@ -38,8 +38,8 @@ public class Player : MonoBehaviour, IAgentTarget
         //https://www.youtube.com/watch?v=qMRrRQ587qQ
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject bullet = Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
-            bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
+           /* GameObject bullet = */Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
+           // bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
         }
     }
    
