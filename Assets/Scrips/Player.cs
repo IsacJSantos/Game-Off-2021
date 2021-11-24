@@ -10,12 +10,13 @@ public class Player : MonoBehaviour, IAgentTarget
     [SerializeField] Collider _bodyCollider;
     Vector3 movement;  
     float addAngle = 270.0f;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject bulletOut;
+    [SerializeField] float bulletSpeed;
     
     private void Update()
     {
         ProcessInputs();
-     
-        //AimAndShoot();
 
     }
     private void FixedUpdate()
@@ -33,7 +34,13 @@ public class Player : MonoBehaviour, IAgentTarget
         float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
         angle = angle + addAngle;
         _bodyTransform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
-       
+
+        //https://www.youtube.com/watch?v=qMRrRQ587qQ
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(90.0f, 0.0f, 0.0f));
+            bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
+        }
     }
    
     private void Move()
