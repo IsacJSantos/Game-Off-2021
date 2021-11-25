@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IAgentTarget
+public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 {
     [SerializeField] Transform _bodyTransform;
     [SerializeField] float _speed;
@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IAgentTarget
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject bulletOut;
     [SerializeField] float bulletSpeed;
+    [SerializeField] PlayerLife playerLife;
     
     private void Update()
     {
@@ -52,5 +53,10 @@ public class Player : MonoBehaviour, IAgentTarget
     public Vector3 GetClosestPoint(Vector3 objectPos)
     {
         return _bodyCollider.ClosestPointOnBounds(objectPos);
+    }
+
+    public void Hit(float value)
+    {
+        playerLife.Life -= value; 
     }
 }
