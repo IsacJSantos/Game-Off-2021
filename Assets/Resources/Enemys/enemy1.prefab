@@ -86,7 +86,8 @@ MonoBehaviour:
   targetType: 0
   maxLife: 10
   AttackCooldown: 1
-  attackForce: 1
+  attackForce: 3
+  time: 0
 --- !u!1 &3892931519643569076
 GameObject:
   m_ObjectHideFlags: 0

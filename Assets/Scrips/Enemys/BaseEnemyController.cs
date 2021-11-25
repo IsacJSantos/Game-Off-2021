@@ -14,7 +14,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     IAgentTarget agentTarget;
     IBeatable beatableTarget;
 
-    float time;
+    public float time;
     public virtual void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
@@ -29,20 +29,9 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         enemyMovement.doMove = true;
     }
     public virtual void Update()
-    {
-        /*  if (Input.GetKeyDown(KeyCode.K))
-          {
-              targetType = targetType == EnemyTargetType.Anthill ? EnemyTargetType.Player : EnemyTargetType.Anthill;
-              SetTarget(targetType);
-          }
-          if (Input.GetKeyDown(KeyCode.J))
-          {
-              Hit(1);
-          }
-        */
-        if (enemyMovement.TargetDistance <= enemyMovement.StopDistance + 0.01)
-        {
-            // print($"{enemyMovement.TargetDistance} {enemyMovement.StopDistance}");
+    {      
+        if (enemyMovement.CanAttack)
+        {       
             Attack();
         }
        
@@ -50,8 +39,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     }
     public virtual void Attack()
     {
-        print("Attack");
-        if (!CanAttack()) { print("return"); return; }
+        if (!CanAttack()) return;
 
         time = Time.time;
         beatableTarget?.Hit(attackForce);
@@ -69,7 +57,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     }
     void Move()
     {
-        enemyMovement.agent.SetDestination(agentTarget.GetClosestPoint(transform.position));
+        enemyMovement.target = agentTarget.GetClosestPoint(transform.position);
     }
 
     public virtual void Die()
@@ -82,13 +70,13 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     {
         agentTarget = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IAgentTarget>();
         beatableTarget = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IBeatable>();
+
     }
 
     bool CanAttack()
     {
-        return Time.time >= time + AttackCooldown &&
-            enemyMovement.target != null &&
-            enemyMovement.doMove == true;
+        return Time.time >= (time + AttackCooldown) &&
+            enemyMovement.target != null;
     }
 
 }
