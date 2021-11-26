@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] EnemysContainer enemysContainer;
 
-    float spawnDelay = 1.5f;
+    float spawnDelay = 0.3f;
 
 
     void Update()
