@@ -22,6 +22,7 @@ public class Events : MonoBehaviour
     #region PlayerSpecialAttack
     public static FloatEvent OnHealingPlayer;
     public static Vector3FloatFloatFloatEvent OnBombExplode;
+    public static SimpleEvent OnFireSuperShot;
     #endregion
 
     public delegate void SimpleEvent();

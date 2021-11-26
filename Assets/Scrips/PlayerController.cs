@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     [SerializeField] float bulletSpeed;
     [SerializeField] PlayerLife playerLife;
 
+    bool _canMove = true;
     private void Awake()
     {
         Events.OnHealingPlayer += HealPlayer;
+        Events.OnFireSuperShot += OnFireSuperShot;
     }
     private void OnDestroy()
     {
         Events.OnHealingPlayer -= HealPlayer;
+        Events.OnFireSuperShot += OnFireSuperShot;
     }
     private void Update()
     {
@@ -36,7 +39,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     {
         //coletar inputs do movimento do personagem
         movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        movement = Vector3.ClampMagnitude(movement, 1.0f) * _speed * Time.fixedDeltaTime; //prevenir bug da velocidade maior na diagonal
+        movement = Vector3.ClampMagnitude(movement, 1.0f) * _speed * Time.deltaTime; //prevenir bug da velocidade maior na diagonal
 
         //coletar inputs da mira
         Vector3 aimPos = Input.mousePosition - Camera.main.WorldToScreenPoint(new Vector3(_bodyTransform.position.x, 0.0f, _bodyTransform.position.z));
@@ -56,6 +59,9 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     private void Move()
     {
         //movimentar personagem
+
+        if (movement == Vector3.zero || !_canMove) return;
+
         _bodyRb.velocity = movement;
     }
 
@@ -74,5 +80,18 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     {
         if (playerLife.IsAlive)
             playerLife.Life += playerLife.MaxLife * (percent / 100);
+    }
+
+    void OnFireSuperShot()
+    {
+        StartCoroutine(PlayerMoveStum());
+        _bodyRb.AddForce((_bodyRb.transform.forward * -1) * 7000 * Time.deltaTime, ForceMode.VelocityChange);
+    }
+
+    IEnumerator PlayerMoveStum()
+    {
+        _canMove = false;
+        yield return new WaitForSeconds(0.5f);
+        _canMove = true;
     }
 }

@@ -60,11 +60,12 @@ public class PlayerSpecial : MonoBehaviour
     void Pump() 
     {
         print("Bomb");
-        Instantiate(_bombPrefab, bulletOut.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0));
+        Instantiate(_bombPrefab, bulletOut.position, Quaternion.Euler(0, _bodyTransform.rotation.eulerAngles.y, 0));
     }
     void SuperShot() 
     {
         print("SuperShot");
+        Events.OnFireSuperShot?.Invoke();
     }
 }
 //[System.Serializable]
