@@ -17,6 +17,11 @@ public class BaseLifeSystem : MonoBehaviour
                 _currentLife = 0;
                 _isAlive = false;
             }
+            else 
+            {
+                if (_currentLife > _maxLife)
+                    _currentLife = _maxLife;
+            }
         }
     }
     public bool IsAlive { get { return _isAlive; } }

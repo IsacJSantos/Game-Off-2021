@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMovement))]
 public class BaseEnemyController : MonoBehaviour, IBeatable
 {
+    [SerializeField] Collider _col;
+    [SerializeField] Rigidbody _rb;
     [SerializeField] protected EnemyTargetType targetType;
     [SerializeField] protected float maxLife;
     [SerializeField] protected float AttackCooldown = 1;
@@ -22,11 +24,17 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
         if (AttackCooldown <= 0)
             AttackCooldown = 1;
+
+        Events.OnBombExplode += CalculateExplosionHit;
     }
     public virtual void Start()
     {
         SetTarget(targetType);
         enemyMovement.doMove = true;
+    }
+    private void OnDestroy()
+    {
+        Events.OnBombExplode -= CalculateExplosionHit;
     }
     public virtual void Update()
     {      
@@ -78,7 +86,22 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         return Time.time >= (time + AttackCooldown) &&
             enemyMovement.target != null;
     }
+    void CalculateExplosionHit(Vector3 explosionPos, float force, float range)
+    {
+        if (Vector3.Distance(transform.position, explosionPos) > range)
+        {
+            print("Returning");
+            return;
+        }
+        Vector3 forcePoint = _col.ClosestPointOnBounds(explosionPos);
 
+        Vector3 forceVector = transform.position - forcePoint;
+
+        float x = (forceVector.x < 0 ? -1 : 1);
+        float z = (forceVector.z < 0 ? -1 : 1);
+        _rb.AddForce(new Vector3(x, 0, z) * force, ForceMode.Force);
+
+    }
 }
 [System.Serializable]
 public enum EnemyTargetType { Player, Anthill };

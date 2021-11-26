@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 5214965857712697803}
   - component: {fileID: 5214965857712697802}
   - component: {fileID: 166785316469852415}
+  - component: {fileID: 4573867428048626301}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -259,10 +260,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493c59108cfed434792299c59e92d850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseLife: 10
+  _baseLife: 20
   _currentLife: 0
-  _maxLife: 10
+  _maxLife: 20
   _isAlive: 0
+--- !u!114 &4573867428048626301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214965857712697800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ee40bdebd194346adbc435bb536728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldown: 1
+  specialType: 1
+  _bombPrefab: {fileID: 4786632473948546411, guid: a72c298e05b83ca44975c80c0bd98ec5, type: 3}
+  _specialBulletPrefab: {fileID: 0}
+  bulletOut: {fileID: 9203428140014923998}
+  _healingPercent: 70
 --- !u!1 &5214965858307240448
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +423,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8667747471183632028}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 50dfa7ea881564044b8fc1752aa2f5da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
