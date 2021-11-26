@@ -8,7 +8,6 @@ public class Events : MonoBehaviour
     #region AnthillEvents
  
     #endregion
-
     #region CardsManager
     public static SimpleEvent OnShowCards;
     public static SimpleEvent OnCardClicked;
@@ -20,9 +19,15 @@ public class Events : MonoBehaviour
     public static SimpleEvent OnDecreaseAbilityCooldown;
     public static SimpleEvent OnDecreaseReloadDelay;
     #endregion
+    #region PlayerSpecialAttack
+    public static FloatEvent OnHealingPlayer;
+    public static Vector3FloatFloatEvent OnBombExplode;
+    #endregion
 
     public delegate void SimpleEvent();
     public delegate void IntEvent(int i);
     public delegate void FloatEvent(float s);
     public delegate void BoolEvent(bool b);
+
+    public delegate void Vector3FloatFloatEvent( Vector3 v3,float f1,float f2);
 }
