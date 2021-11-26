@@ -17,7 +17,7 @@ public class tempScript : MonoBehaviour
     }
 
 
-    void CalculateExplosionHit(Vector3 explosionPos, float force, float range)
+    void CalculateExplosionHit(Vector3 explosionPos, float force, float range,float damage)
     {
         if (Vector3.Distance(transform.position, explosionPos) > range)
         {

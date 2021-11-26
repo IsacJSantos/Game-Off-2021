@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
@@ -55,11 +56,13 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
     public virtual void Hit(float value)
     {
+        if (maxLife <= 0) return;
+
         maxLife -= value;
 
         if (maxLife <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
 
     }
@@ -68,12 +71,12 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         enemyMovement.target = agentTarget.GetClosestPoint(transform.position);
     }
 
-    public virtual void Die()
-    {
-        enemyMovement.doMove = false;
+    public virtual IEnumerator Die() 
+    {  
+        enemyMovement.StopEnemy();
+        yield return new WaitForSeconds(0.7f);
         gameObject.SetActive(false);
     }
-
     public virtual void SetTarget(EnemyTargetType targetType)
     {
         agentTarget = GameObject.FindGameObjectWithTag(targetType.ToString()).GetComponent<IAgentTarget>();
@@ -86,7 +89,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         return Time.time >= (time + AttackCooldown) &&
             enemyMovement.target != null;
     }
-    void CalculateExplosionHit(Vector3 explosionPos, float force, float range)
+    void CalculateExplosionHit(Vector3 explosionPos, float force, float range, float damage)
     {
         if (Vector3.Distance(transform.position, explosionPos) > range)
         {
@@ -100,7 +103,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         float x = (forceVector.x < 0 ? -1 : 1);
         float z = (forceVector.z < 0 ? -1 : 1);
         _rb.AddForce(new Vector3(x, 0, z) * force, ForceMode.Force);
-
+        Hit(damage);
     }
 }
 [System.Serializable]

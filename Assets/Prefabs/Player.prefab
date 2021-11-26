@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682837352515930352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66, y: 8.250002, z: 0}
+  m_LocalPosition: {x: 1.16, y: 5.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5214965858307240451}
@@ -281,6 +281,7 @@ MonoBehaviour:
   _bombPrefab: {fileID: 4786632473948546411, guid: a72c298e05b83ca44975c80c0bd98ec5, type: 3}
   _specialBulletPrefab: {fileID: 0}
   bulletOut: {fileID: 9203428140014923998}
+  _bodyTransform: {fileID: 2194387946597745455}
   _healingPercent: 70
 --- !u!1 &5214965858307240448
 GameObject:

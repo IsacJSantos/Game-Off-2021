@@ -9,6 +9,7 @@ public class PlayerSpecial : MonoBehaviour
     [SerializeField] GameObject _bombPrefab;
     [SerializeField] GameObject _specialBulletPrefab;
     [SerializeField] Transform bulletOut;
+    [SerializeField] Transform _bodyTransform;
 
     [Header("Values")]
     [SerializeField] float _healingPercent;
@@ -59,7 +60,7 @@ public class PlayerSpecial : MonoBehaviour
     void Pump() 
     {
         print("Bomb");
-        Instantiate(_bombPrefab, bulletOut.position, Quaternion.identity);
+        Instantiate(_bombPrefab, bulletOut.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0));
     }
     void SuperShot() 
     {

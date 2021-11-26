@@ -21,13 +21,13 @@ public class Events : MonoBehaviour
     #endregion
     #region PlayerSpecialAttack
     public static FloatEvent OnHealingPlayer;
-    public static Vector3FloatFloatEvent OnBombExplode;
+    public static Vector3FloatFloatFloatEvent OnBombExplode;
     #endregion
 
     public delegate void SimpleEvent();
     public delegate void IntEvent(int i);
-    public delegate void FloatEvent(float s);
+    public delegate void FloatEvent(float f);
     public delegate void BoolEvent(bool b);
 
-    public delegate void Vector3FloatFloatEvent( Vector3 v3,float f1,float f2);
+    public delegate void Vector3FloatFloatFloatEvent( Vector3 v3,float f1,float f2, float f3);
 }
