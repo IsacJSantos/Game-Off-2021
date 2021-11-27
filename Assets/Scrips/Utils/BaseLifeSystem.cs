@@ -37,7 +37,7 @@ public class BaseLifeSystem : MonoBehaviour
 
     public virtual void Awake()
     {
-        dieParticle.transform.position = transform.position;
+       
     }
 
     public virtual void Start()
