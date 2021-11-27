@@ -17,10 +17,9 @@ public class PlayerAttack : MonoBehaviour
 
 
     //sound
-    [SerializeField] List<GameObject> _thisGameObjectSounds = new List<GameObject>();
-    int soundIndex;
     AudioSource _audioSource;
-    AudioClip _audioClip;
+    [SerializeField] AudioSource _shot1;
+    [SerializeField] AudioSource _reload1;
 
     bool _isReloading;
     float _baseReloadDelay = 2;
@@ -77,7 +76,9 @@ public class PlayerAttack : MonoBehaviour
             bullet.damage = _fireDamage;
             //PoolingSystem.Instancia.GetObjeto("Bullet", bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             _currentBullets--;
-            SelectSound("SHOT1");
+
+            //sound
+            PlaySound("SHOT1");
         }
        
     }
@@ -85,7 +86,10 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator Reload()
     {
         _isReloading = true;
-        SelectSound("RELOAD");
+        
+        //sound
+        PlaySound("RELOAD");
+        
         yield return new WaitForSeconds(_reloadDelay);
         _currentBullets = _magazineLength;
         _isReloading = false;
@@ -113,35 +117,20 @@ public class PlayerAttack : MonoBehaviour
             !_isReloading && _currentBullets > 0;
     }
 
-    public void SelectSound(string soundSelection)
+    public void PlaySound(string soundSelection)
     {
-        switch (soundSelection)
+        if (soundSelection == "SHOT1")
         {
-            case "SHOT1":
-                soundIndex = 0;        
-                break;
-            case "RELOAD":
-                soundIndex = 2;
-                break;
-            default:
-                Debug.Log("Sound not found");
-                break;
-        }
-        PlaySound(soundIndex);
-    }
-
-    public void PlaySound(int soundIndex)
-    {
-       /* if (_thisGameObjectSounds[soundIndex].GetComponent<AudioSource>())
+            _audioSource = _shot1.GetComponent<AudioSource>();
+            _audioSource.PlayOneShot(_shot1.clip, 1.0f);
+        } else if (soundSelection == "RELOAD")
         {
-            _audioSource = _thisGameObjectSounds[soundIndex].GetComponent<AudioSource>();
-            if (_audioSource.clip)
-            {
-                _audioClip = _thisGameObjectSounds[soundIndex].GetComponent<AudioSource>().clip;
-                _audioSource.PlayOneShot(_audioClip, 1.0f);
-            }
+            _audioSource = _reload1.GetComponent<AudioSource>();
+            _audioSource.PlayOneShot(_reload1.clip, 1.0f);
+        } else
+        {
+            Debug.Log("Sound not found");
         }
-       */
     }
 
 
