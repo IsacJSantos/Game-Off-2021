@@ -6,15 +6,18 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 {
     [SerializeField] Transform _bodyTransform;
     [SerializeField] float _speed;
+    float _defaultSpeed;
     [SerializeField] Rigidbody _bodyRb;
     [SerializeField] Collider _bodyCollider;
     Vector3 movement;
     float addAngle = 270.0f;
     [SerializeField] PlayerLife playerLife;
+    [SerializeField] float _runSpeed;
 
     bool _canMove = true;
     private void Awake()
     {
+        _defaultSpeed = _speed;
         Events.OnHealingPlayer += HealPlayer;
         Events.OnFireSuperShot += OnFireSuperShot;
     }
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     }
     private void ProcessInputs()
     {
+        
+  
         //coletar inputs do movimento do personagem
         movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         movement = Vector3.ClampMagnitude(movement, 1.0f) * _speed * Time.fixedDeltaTime; //prevenir bug da velocidade maior na diagonal
@@ -43,7 +48,8 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
         angle = angle + addAngle;
         _bodyTransform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
-      
+
+        IsRunning();
     }
 
     private void Move()
@@ -53,6 +59,20 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         if (movement == Vector3.zero || !_canMove) return;
 
         _bodyRb.velocity = movement;
+    }
+
+    private void IsRunning()
+    {
+        //aumenta a velocidade do personagem
+        //se o jogador mantiver pressionada a tecla de correr
+
+        if (Input.GetButton("Run"))
+        {
+            _speed = _runSpeed;
+        }
+        else if (Input.GetButtonUp("Run")) {
+            _speed = _defaultSpeed;
+        }
     }
 
     public Vector3 GetClosestPoint(Vector3 objectPos)

@@ -13538,6 +13538,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697802, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: _runSpeed
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214965857712697802, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: bulletOut
       value: 
       objectReference: {fileID: 1598257326}
