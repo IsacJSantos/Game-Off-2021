@@ -14,10 +14,20 @@ public class PlayerSpecial : MonoBehaviour
     [Header("Values")]
     [SerializeField] float _healingPercent;
 
-    float time;
+    float delay;
+
+    private void Awake()
+    {
+        Events.OnDecreaseAbilityCooldown += DecreaseAbilityCooldown;
+    }
     void Start()
     {
+        
+    }
 
+    private void OnDestroy()
+    {
+        Events.OnDecreaseAbilityCooldown -= DecreaseAbilityCooldown;
     }
 
     void Update()
@@ -30,10 +40,10 @@ public class PlayerSpecial : MonoBehaviour
 
     void DoSpecial()
     {
-        if (Time.time >= time + _cooldown)
+        if (Time.time >= delay)
         {
-            print("Special Attack!!!");
-            time = Time.time;
+            delay = Time.time + _cooldown;
+            print("Special Attack!!!");     
 
             switch (specialType)
             {
@@ -66,6 +76,12 @@ public class PlayerSpecial : MonoBehaviour
     {
         print("SuperShot");
         Events.OnFireSuperShot?.Invoke();
+    }
+
+    void DecreaseAbilityCooldown() 
+    {
+        if (_cooldown <= 1) return;
+        _cooldown -= 0.5f;
     }
 }
 //[System.Serializable]
