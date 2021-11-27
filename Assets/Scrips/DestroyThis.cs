@@ -1,14 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
-public class DestroyThis : MonoBehaviour
 //destroi gameobject apos colisao ou tempo
-
+public class DestroyThis : MonoBehaviour
 {
+
+    [SerializeField] string _ignoretag;
+
     [SerializeField] float destroyAfterTimeDelay;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == _ignoretag) return;
+
         Destroy(gameObject);
     }
 

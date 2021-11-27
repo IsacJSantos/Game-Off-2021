@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anthill
   - Cursor
+  - Enemy
   layers:
   - Default
   - TransparentFX

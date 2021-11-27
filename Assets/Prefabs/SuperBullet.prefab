@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 1967475519}
   - component: {fileID: 1967475520}
   - component: {fileID: -1113782142200648639}
+  - component: {fileID: 8708199704644744973}
   m_Layer: 0
-  m_Name: Bullet 1
-  m_TagString: Untagged
+  m_Name: SuperBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,5 +158,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f24439db409d6b459d459c8b8dc99a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
   rb: {fileID: 1967475519}
   velocity: 35
+--- !u!114 &8708199704644744973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348391111054705092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6cf068601c2154db3c5d43a324b6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ignoretag: Bullet
+  destroyAfterTimeDelay: 5

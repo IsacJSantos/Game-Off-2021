@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] float _reloadDelay;
     [SerializeField] float _fireCooldown;
+    [SerializeField] float _fireDamage;
+
 
     //sound
     [SerializeField] List<GameObject> _thisGameObjectSounds = new List<GameObject>();
@@ -27,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Events.OnImproveMagazine += ImproveMagazine;
         Events.OnDecreaseReloadDelay += DecreaseReloadDelay;
+        Events.OnImproveDamage += ImproveDamage;
     }
     private void Start()
     {
@@ -35,7 +38,8 @@ public class PlayerAttack : MonoBehaviour
     private void OnDestroy()
     {
         Events.OnImproveMagazine -= ImproveMagazine;
-        Events.OnDecreaseReloadDelay += DecreaseReloadDelay;
+        Events.OnDecreaseReloadDelay -= DecreaseReloadDelay;
+        Events.OnImproveDamage -= ImproveDamage;
     }
     void Update()
     {
@@ -64,12 +68,18 @@ public class PlayerAttack : MonoBehaviour
     {
         if (CanFire())
         {
-            time = Time.time;
-            Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
+            time = Time.time + _fireCooldown;
+            BulletController bullet = Instantiate(
+                                                    bulletPrefab, bulletOut.transform.position, Quaternion.Euler(
+                                                             0, _bodyTransform.localRotation.eulerAngles.y, 0.0f)
+                                                 ).GetComponent<BulletController>();
+
+            bullet.damage = _fireDamage;
             //PoolingSystem.Instancia.GetObjeto("Bullet", bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             _currentBullets--;
             SelectSound("SHOT1");
         }
+       
     }
 
     IEnumerator Reload()
@@ -93,9 +103,13 @@ public class PlayerAttack : MonoBehaviour
             _reloadDelay = 0.2f;
     }
 
+    void ImproveDamage() 
+    {
+        _fireDamage += 1.5f;
+    }
     bool CanFire()
     {
-        return (_fireCooldown + time) <= Time.time &&
+        return time <= Time.time &&
             !_isReloading && _currentBullets > 0;
     }
 
@@ -118,7 +132,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void PlaySound(int soundIndex)
     {
-        if (_thisGameObjectSounds[soundIndex].GetComponent<AudioSource>())
+       /* if (_thisGameObjectSounds[soundIndex].GetComponent<AudioSource>())
         {
             _audioSource = _thisGameObjectSounds[soundIndex].GetComponent<AudioSource>();
             if (_audioSource.clip)
@@ -127,5 +141,8 @@ public class PlayerAttack : MonoBehaviour
                 _audioSource.PlayOneShot(_audioClip, 1.0f);
             }
         }
+       */
     }
+
+
 }

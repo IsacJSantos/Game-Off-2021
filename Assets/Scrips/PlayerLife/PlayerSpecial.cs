@@ -7,7 +7,6 @@ public class PlayerSpecial : MonoBehaviour
     [SerializeField] float _cooldown;
     [SerializeField] SpecialType specialType;
     [SerializeField] GameObject _bombPrefab;
-    [SerializeField] GameObject _specialBulletPrefab;
     [SerializeField] Transform bulletOut;
     [SerializeField] Transform _bodyTransform;
 

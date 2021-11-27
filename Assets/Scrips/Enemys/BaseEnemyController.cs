@@ -56,6 +56,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
     public virtual void Hit(float value)
     {
+        Debug.LogWarning($"Hit {value}");
         if (maxLife <= 0) return;
 
         maxLife -= value;

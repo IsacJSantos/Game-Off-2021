@@ -12153,6 +12153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5aebf9e26d0c47a9560e2f06a11a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieParticle: {fileID: 0}
   _baseLife: 50
   _currentLife: 0
   _maxLife: 100
@@ -15990,6 +15991,10 @@ PrefabInstance:
     - target: {fileID: 4608244679021581438, guid: 7f1b89f78322f6849b1aaf498f2e03ee, type: 3}
       propertyPath: m_Name
       value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608244679021581438, guid: 7f1b89f78322f6849b1aaf498f2e03ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1b89f78322f6849b1aaf498f2e03ee, type: 3}

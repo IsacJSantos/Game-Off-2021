@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3892931518386921229}
   - component: {fileID: 1249933357790121783}
   - component: {fileID: 6992169790859632227}
+  - component: {fileID: 1508090851476970113}
   m_Layer: 0
   m_Name: enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,9 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c10287d44f9854aa08bfd4b2e7a74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 3892931518386921234}
   doMove: 0
   target: {x: 0, y: 0, z: 0}
+  agent: {fileID: 3892931518386921234}
+  _isStopped: 0
 --- !u!114 &1249933357790121783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96fa677a981a2b4eaece2ae6be0426a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _col: {fileID: 1337550100824015305}
+  _col: {fileID: 1508090851476970113}
   _rb: {fileID: 6992169790859632227}
   targetType: 0
   maxLife: 10
@@ -107,6 +109,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!135 &1508090851476970113
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892931518386921233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.22
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3892931519643569076
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,10 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3892931519643569077}
   - component: {fileID: 3892931519643569078}
-  - component: {fileID: 1337550100824015305}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,16 +204,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!135 &1337550100824015305
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892931519643569076}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0.000000007450581}

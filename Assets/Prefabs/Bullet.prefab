@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -3561830503752138205}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f24439db409d6b459d459c8b8dc99a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   rb: {fileID: 1967475519}
   velocity: 25
 --- !u!114 &-3561830503752138205
@@ -172,4 +173,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6cf068601c2154db3c5d43a324b6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterTimeDelay: 10
+  _ignoretag: Bullet
+  destroyAfterTimeDelay: 5
