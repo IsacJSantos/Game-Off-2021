@@ -63,7 +63,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682837352515930352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 5.64, z: 0}
+  m_LocalPosition: {x: 0.41, y: 6.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5214965858307240451}
@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 5214965857712697802}
   - component: {fileID: 166785316469852415}
   - component: {fileID: 4573867428048626301}
+  - component: {fileID: 3704331666331224716}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -324,12 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyTransform: {fileID: 2194387946597745455}
-  _speed: 4000
+  _speed: 800
   _bodyRb: {fileID: 2699860103369245866}
   _bodyCollider: {fileID: 7147597869615698632}
-  bulletPrefab: {fileID: 4348391111054705092, guid: 098419f38e0c5f140a8c03a4be0c0302, type: 3}
-  bulletOut: {fileID: 1682837352515930352}
-  bulletSpeed: 0.1
   playerLife: {fileID: 166785316469852415}
 --- !u!114 &166785316469852415
 MonoBehaviour:
@@ -366,6 +364,25 @@ MonoBehaviour:
   bulletOut: {fileID: 9203428140014923998}
   _bodyTransform: {fileID: 2194387946597745455}
   _healingPercent: 70
+--- !u!114 &3704331666331224716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214965857712697800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbbff052d849004cb99f4d15e962784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyTransform: {fileID: 2194387946597745455}
+  bulletPrefab: {fileID: 4348391111054705092, guid: 098419f38e0c5f140a8c03a4be0c0302, type: 3}
+  bulletOut: {fileID: 1682837352515930352}
+  _magazineLength: 20
+  _currentBullets: 0
+  _reloadDelay: 2
+  _fireCooldown: 0.2
 --- !u!1 &5214965858307240448
 GameObject:
   m_ObjectHideFlags: 0

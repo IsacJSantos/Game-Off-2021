@@ -10,9 +10,6 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     [SerializeField] Collider _bodyCollider;
     Vector3 movement;
     float addAngle = 270.0f;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject bulletOut;
-    [SerializeField] float bulletSpeed;
     [SerializeField] PlayerLife playerLife;
 
     bool _canMove = true;
@@ -39,21 +36,14 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     {
         //coletar inputs do movimento do personagem
         movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        movement = Vector3.ClampMagnitude(movement, 1.0f) * _speed * Time.deltaTime; //prevenir bug da velocidade maior na diagonal
+        movement = Vector3.ClampMagnitude(movement, 1.0f) * _speed * Time.fixedDeltaTime; //prevenir bug da velocidade maior na diagonal
 
         //coletar inputs da mira
         Vector3 aimPos = Input.mousePosition - Camera.main.WorldToScreenPoint(new Vector3(_bodyTransform.position.x, 0.0f, _bodyTransform.position.z));
         float angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
         angle = angle + addAngle;
         _bodyTransform.rotation = Quaternion.AngleAxis(angle, Vector3.down);
-
-        //https://www.youtube.com/watch?v=qMRrRQ587qQ
-        if (Input.GetButtonDown("Fire1"))
-        {
-            /* GameObject bullet = */
-            Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
-            // bullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSpeed;
-        }
+      
     }
 
     private void Move()
@@ -85,7 +75,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     void OnFireSuperShot()
     {
         StartCoroutine(PlayerMoveStum());
-        _bodyRb.AddForce((_bodyRb.transform.forward * -1) * 7000 * Time.deltaTime, ForceMode.VelocityChange);
+        _bodyRb.AddForce((_bodyRb.transform.forward * -1) * 8000 * Time.deltaTime, ForceMode.VelocityChange);
     }
 
     IEnumerator PlayerMoveStum()
