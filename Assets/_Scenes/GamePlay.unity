@@ -137,8 +137,8 @@ AudioSource:
   m_GameObject: {fileID: 12009139}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6153013998728540604, guid: 5db3da4283b40c94ca50a6f5a4a66040, type: 2}
-  m_audioClip: {fileID: 8300000, guid: dc20309618e0851439d59cc541d26b43, type: 3}
+  OutputAudioMixerGroup: {fileID: -6294507557231318378, guid: 5db3da4283b40c94ca50a6f5a4a66040, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6b4bff78ea5c7e74f8fc4fbc4e262ba8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -233,8 +233,8 @@ AudioSource:
   m_GameObject: {fileID: 12009139}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6294507557231318378, guid: 5db3da4283b40c94ca50a6f5a4a66040, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6b4bff78ea5c7e74f8fc4fbc4e262ba8, type: 3}
+  OutputAudioMixerGroup: {fileID: 6153013998728540604, guid: 5db3da4283b40c94ca50a6f5a4a66040, type: 2}
+  m_audioClip: {fileID: 8300000, guid: dc20309618e0851439d59cc541d26b43, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -14213,7 +14213,7 @@ PrefabInstance:
     - target: {fileID: 3704331666331224716, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: _shot1
       value: 
-      objectReference: {fileID: 12009141}
+      objectReference: {fileID: 12009140}
     - target: {fileID: 3704331666331224716, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: _sound
       value: 
@@ -14225,7 +14225,7 @@ PrefabInstance:
     - target: {fileID: 3704331666331224716, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: _reload1
       value: 
-      objectReference: {fileID: 12009140}
+      objectReference: {fileID: 12009141}
     - target: {fileID: 3704331666331224716, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: _thisGameObjectSounds.Array.size
       value: 3

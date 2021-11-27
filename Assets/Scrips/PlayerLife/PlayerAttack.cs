@@ -17,7 +17,6 @@ public class PlayerAttack : MonoBehaviour
 
 
     //sound
-    AudioSource _audioSource;
     [SerializeField] AudioSource _shot1;
     [SerializeField] AudioSource _reload1;
 
@@ -88,7 +87,7 @@ public class PlayerAttack : MonoBehaviour
         _isReloading = true;
         
         //sound
-        PlaySound("RELOAD");
+        PlaySound("RELOAD1");
         
         yield return new WaitForSeconds(_reloadDelay);
         _currentBullets = _magazineLength;
@@ -119,19 +118,17 @@ public class PlayerAttack : MonoBehaviour
 
     public void PlaySound(string soundSelection)
     {
-        if (soundSelection == "SHOT1")
+        switch (soundSelection)
         {
-            _audioSource = _shot1.GetComponent<AudioSource>();
-            _audioSource.PlayOneShot(_shot1.clip, 1.0f);
-        } else if (soundSelection == "RELOAD")
-        {
-            _audioSource = _reload1.GetComponent<AudioSource>();
-            _audioSource.PlayOneShot(_reload1.clip, 1.0f);
-        } else
-        {
-            Debug.Log("Sound not found");
+            case "SHOT1":
+                _shot1.PlayOneShot(_shot1.clip, 1.0f);
+                break;
+            case "RELOAD1":
+                _reload1.PlayOneShot(_reload1.clip, 1.0f);
+                break;
+            default:
+                Debug.Log("Sound not found");
+                break;
         }
     }
-
-
 }
