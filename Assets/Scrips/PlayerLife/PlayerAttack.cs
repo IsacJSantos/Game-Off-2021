@@ -60,6 +60,7 @@ public class PlayerAttack : MonoBehaviour
         {
             time = Time.time;
             Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
+            //PoolingSystem.Instancia.GetObjeto("Bullet", bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             _currentBullets--;
         }
 
