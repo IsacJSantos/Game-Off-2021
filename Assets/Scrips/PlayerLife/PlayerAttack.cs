@@ -14,6 +14,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float _reloadDelay;
     [SerializeField] float _fireCooldown;
 
+    //sound
+    [SerializeField] List<GameObject> _thisGameObjectSounds = new List<GameObject>();
+    int soundIndex;
+    AudioSource _audioSource;
+    AudioClip _audioClip;
+
     bool _isReloading;
     float _baseReloadDelay = 2;
     float time;
@@ -62,13 +68,14 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(bulletPrefab, bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             //PoolingSystem.Instancia.GetObjeto("Bullet", bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             _currentBullets--;
+            SelectSound("SHOT1");
         }
-
     }
 
     IEnumerator Reload()
     {
         _isReloading = true;
+        SelectSound("RELOAD");
         yield return new WaitForSeconds(_reloadDelay);
         _currentBullets = _magazineLength;
         _isReloading = false;
@@ -90,5 +97,35 @@ public class PlayerAttack : MonoBehaviour
     {
         return (_fireCooldown + time) <= Time.time &&
             !_isReloading && _currentBullets > 0;
+    }
+
+    public void SelectSound(string soundSelection)
+    {
+        switch (soundSelection)
+        {
+            case "SHOT1":
+                soundIndex = 0;        
+                break;
+            case "RELOAD":
+                soundIndex = 2;
+                break;
+            default:
+                Debug.Log("Sound not found");
+                break;
+        }
+        PlaySound(soundIndex);
+    }
+
+    public void PlaySound(int soundIndex)
+    {
+        if (_thisGameObjectSounds[soundIndex].GetComponent<AudioSource>())
+        {
+            _audioSource = _thisGameObjectSounds[soundIndex].GetComponent<AudioSource>();
+            if (_audioSource.clip)
+            {
+                _audioClip = _thisGameObjectSounds[soundIndex].GetComponent<AudioSource>().clip;
+                _audioSource.PlayOneShot(_audioClip, 1.0f);
+            }
+        }
     }
 }
