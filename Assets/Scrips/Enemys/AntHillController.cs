@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TempAntHillController : MonoBehaviour, IBeatable, IAgentTarget
+public class AntHillController : MonoBehaviour, IBeatable, IAgentTarget
 {
     [SerializeField] Collider _collider;
     public Image fillLife;
@@ -12,10 +12,14 @@ public class TempAntHillController : MonoBehaviour, IBeatable, IAgentTarget
 
         anthillLife.Life -= value;
 
-        if (anthillLife.Life < 0)
-            anthillLife.Life = 0;
-
         fillLife.fillAmount = ((1 / anthillLife.MaxLife) * anthillLife.Life);
+
+
+        if (!anthillLife.IsAlive)
+        {
+            Events.OnAnthillDie?.Invoke();
+        }
+
     }
 
     public Vector3 GetClosestPoint(Vector3 objectPos)

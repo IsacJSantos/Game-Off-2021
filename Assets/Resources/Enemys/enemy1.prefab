@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1249933357790121783}
   - component: {fileID: 6992169790859632227}
   - component: {fileID: 1508090851476970113}
+  - component: {fileID: 1210103011258330321}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: Enemy
@@ -50,7 +51,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 440
-  m_StoppingDistance: 5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -90,7 +91,7 @@ MonoBehaviour:
   _rb: {fileID: 6992169790859632227}
   targetType: 0
   maxLife: 10
-  AttackCooldown: 1
+  AttackCooldown: 1.7
   attackForce: 1
   time: 0
 --- !u!54 &6992169790859632227
@@ -122,6 +123,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.22
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1210103011258330321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892931518386921233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d75087f4dd4de499dc8e69c93cb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newCursor: {fileID: 0}
 --- !u!1 &3892931519643569076
 GameObject:
   m_ObjectHideFlags: 0

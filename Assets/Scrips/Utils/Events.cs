@@ -3,10 +3,10 @@ using UnityEngine;
 public class Events : MonoBehaviour
 {
     #region PlayerEvents
- 
+    public static SimpleEvent OnPlayerDie;
     #endregion
     #region AnthillEvents
- 
+    public static SimpleEvent OnAnthillDie;
     #endregion
     #region CardsManager
     public static SimpleEvent OnShowCards;

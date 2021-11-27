@@ -83,8 +83,11 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     public void Hit(float value)
     {
         playerLife.Life -= value;
-    }
 
+        if (!playerLife.IsAlive)
+            Events.OnPlayerDie?.Invoke();
+    }
+   
 
     void HealPlayer(float percent)
     {

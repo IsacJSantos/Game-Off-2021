@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TesteNoInimigo : MonoBehaviour
+public class MouseModifyier : MonoBehaviour
 {
    public MouseCursor newCursor;
 
