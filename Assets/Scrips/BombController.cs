@@ -10,6 +10,7 @@ public class BombController : MonoBehaviour
     [SerializeField] float _totalDamage;
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _initialForce;
+    [SerializeField] AudioSource _explodeBombSound;
 
     private void Start()
     {
@@ -25,6 +26,13 @@ public class BombController : MonoBehaviour
     void Explode() 
     {
         Events.OnBombExplode?.Invoke(transform.position, _explosionForce, _range, _totalDamage);
+        
+        //sound
+        if (_explodeBombSound.clip)
+        {
+        _explodeBombSound.PlayOneShot(_explodeBombSound.clip, 1.0f);
+        }
+
         gameObject.SetActive(false);
     }
 }

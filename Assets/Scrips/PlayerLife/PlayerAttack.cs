@@ -121,10 +121,16 @@ public class PlayerAttack : MonoBehaviour
         switch (soundSelection)
         {
             case "SHOT1":
-                _shot1.PlayOneShot(_shot1.clip, 1.0f);
+                if (_shot1.clip)
+                {
+                    _shot1.PlayOneShot(_shot1.clip, 1.0f);
+                }
                 break;
             case "RELOAD1":
-                _reload1.PlayOneShot(_reload1.clip, 1.0f);
+                if (_reload1.clip)
+                {
+                    _reload1.PlayOneShot(_reload1.clip, 1.0f);
+                }
                 break;
             default:
                 Debug.Log("Sound not found");
