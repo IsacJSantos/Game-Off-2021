@@ -13460,37 +13460,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2699860103369245866, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_Drag
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2699860103369245866, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573867428048626301, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: _cooldown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573867428048626301, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: specialType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697800, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697800, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697802, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: val
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697802, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: _speed
-      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_RootOrder
