@@ -3,11 +3,11 @@ using UnityEngine;
 public class BaseLifeSystem : MonoBehaviour
 {
     public float MaxLife { get { return _maxLife; } }
+    public GameObject takeDamageParticle;
     public GameObject dieParticle;
     int counter = 0;
     [SerializeField] AudioSource takeTamageSound;
     [SerializeField] AudioSource dieSound;
-
 
     public float Life
     {
@@ -18,11 +18,15 @@ public class BaseLifeSystem : MonoBehaviour
         set
         {
             _currentLife = value;
+
             if (_currentLife <= 0)
             {
                 _currentLife = 0;
                 _isAlive = false;
                 Die();
+            } else if (_currentLife > 0 && _isAlive)
+            {
+                TakeDamage();
             }
             else 
             {
@@ -31,6 +35,7 @@ public class BaseLifeSystem : MonoBehaviour
             }
         }
     }
+
     public bool IsAlive { get { return _isAlive; } }
 
     [SerializeField] float _baseLife;
@@ -54,6 +59,21 @@ public class BaseLifeSystem : MonoBehaviour
       
     }
 
+    public void TakeDamage()
+    {
+        if (IsAlive)
+        {
+            if (takeDamageParticle)
+            {
+                Debug.Log("take dam particle");
+            }
+
+            if (takeTamageSound)
+            {
+                takeTamageSound.PlayOneShot(takeTamageSound.clip, 1.0f);
+            }
+        }
+    }
 
     public void Die()
     {
