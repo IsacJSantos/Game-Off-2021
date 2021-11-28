@@ -65,7 +65,8 @@ public class BaseLifeSystem : MonoBehaviour
         {
             if (takeDamageParticle)
             {
-                Debug.Log("take dam particle");
+                ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
+                particle.Play();
             }
 
             if (takeTamageSound)
@@ -100,7 +101,6 @@ public class BaseLifeSystem : MonoBehaviour
     {
         ParticleSystem particle = dieParticle.GetComponent<ParticleSystem>();
         particle.Play();
-        //Debug.Log(transform + "die particle");
     }
 
     public void PlayTakeDamageParticle()

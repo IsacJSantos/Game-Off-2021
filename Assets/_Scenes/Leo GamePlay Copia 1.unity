@@ -1071,6 +1071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion Enemy Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133167, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
 --- !u!1 &1420823965
@@ -1110,10 +1114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4573867428048626301, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: specialType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697800, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1121,18 +1121,6 @@ PrefabInstance:
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.264381
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.264381
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.264381
       objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697803, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_LocalPosition.x
