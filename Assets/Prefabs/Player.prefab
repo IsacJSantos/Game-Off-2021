@@ -365,14 +365,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 10
-  specialType: 1
+  specialType: 2
   _bombPrefab: {fileID: 4786632473948546411, guid: a72c298e05b83ca44975c80c0bd98ec5, type: 3}
   bulletOut: {fileID: 9203428140014923998}
   _bodyTransform: {fileID: 2194387946597745455}
   _healingPercent: 70
-  _healing1: {fileID: 0}
-  _throwBomb1: {fileID: 0}
-  _superShot1: {fileID: 0}
+  _healing1: {fileID: 12009147}
+  _throwBomb1: {fileID: 12009149}
+  _superShot1: {fileID: 12009148}
 --- !u!114 &3704331666331224716
 MonoBehaviour:
   m_ObjectHideFlags: 0

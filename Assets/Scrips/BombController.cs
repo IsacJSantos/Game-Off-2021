@@ -11,6 +11,8 @@ public class BombController : MonoBehaviour
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _initialForce;
     [SerializeField] AudioSource _explodeBombSound;
+    [SerializeField] float destroyAfterTimeDelay;
+    [SerializeField] GameObject hideBomb;
 
     private void Start()
     {
@@ -20,9 +22,15 @@ public class BombController : MonoBehaviour
     IEnumerator CountDown() 
     {
         yield return new WaitForSeconds(_timeToExplode);
-        Explode();
-        
+        Explode(); 
     }
+
+    private IEnumerator DestroyGameObject(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+
     void Explode() 
     {
         Events.OnBombExplode?.Invoke(transform.position, _explosionForce, _range, _totalDamage);
@@ -33,6 +41,12 @@ public class BombController : MonoBehaviour
         _explodeBombSound.PlayOneShot(_explodeBombSound.clip, 1.0f);
         }
 
-        gameObject.SetActive(false);
+        //esconder o objeto antes de destrui-lo
+        GetComponent<Rigidbody>().isKinematic = true;
+        hideBomb.SetActive(false);
+
+        //desabilitar o gameobject apos execucao do som
+        IEnumerator destroyGameObject = DestroyGameObject(destroyAfterTimeDelay);
+        StartCoroutine(destroyGameObject);
     }
 }

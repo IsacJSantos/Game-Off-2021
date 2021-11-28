@@ -24,7 +24,6 @@ public class DestroyThis : MonoBehaviour
 
     private IEnumerator DestroyGameObject(float delay)
     {
-        Debug.Log(transform + "destroy");
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
