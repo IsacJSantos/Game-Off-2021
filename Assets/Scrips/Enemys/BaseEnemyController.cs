@@ -10,6 +10,9 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     [SerializeField] protected float maxLife;
     [SerializeField] protected float AttackCooldown = 1;
     [SerializeField] protected float attackForce;
+    [SerializeField] AudioSource takeTamageSound;
+    [SerializeField] AudioSource dieSound;
+
 
     protected EnemyMovement enemyMovement;
 
@@ -65,6 +68,12 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
             StartCoroutine(Die());
         }
 
+        //sound
+        if (takeTamageSound.clip)
+        {
+            takeTamageSound.PlayOneShot(takeTamageSound.clip, 1.0f);
+        }
+
     }
     void Move()
     {
@@ -74,6 +83,13 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     public virtual IEnumerator Die() 
     {  
         enemyMovement.StopEnemy();
+
+        //sound
+        if (dieSound.clip)
+        {
+            dieSound.PlayOneShot(dieSound.clip, 1.0f);
+        }
+
         yield return new WaitForSeconds(0.7f);
         Events.OnEnemyDie?.Invoke();
         gameObject.SetActive(false);
