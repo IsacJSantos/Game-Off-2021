@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSpecial : MonoBehaviour
 {
     [SerializeField] float _cooldown;
-    [SerializeField] SpecialType specialType;
+    [SerializeField] SpecialType _specialType;
     [SerializeField] GameObject _bombPrefab;
     [SerializeField] Transform bulletOut;
     [SerializeField] Transform _bodyTransform;
@@ -22,6 +22,7 @@ public class PlayerSpecial : MonoBehaviour
     private void Awake()
     {
         Events.OnDecreaseAbilityCooldown += DecreaseAbilityCooldown;
+        Events.OnChooseSpecial += ChooseSpecial;
     }
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerSpecial : MonoBehaviour
     private void OnDestroy()
     {
         Events.OnDecreaseAbilityCooldown -= DecreaseAbilityCooldown;
+        Events.OnChooseSpecial -= ChooseSpecial;
     }
 
     void Update()
@@ -48,7 +50,7 @@ public class PlayerSpecial : MonoBehaviour
             delay = Time.time + _cooldown;
             print("Special Attack!!!");     
 
-            switch (specialType)
+            switch (_specialType)
             {
                 case SpecialType.Healing:
                     Healing();
@@ -103,6 +105,11 @@ public class PlayerSpecial : MonoBehaviour
     {
         if (_cooldown <= 1) return;
         _cooldown -= 0.5f;
+    }
+
+    void ChooseSpecial(SpecialType specialType)
+    {
+        _specialType = specialType;
     }
 }
 //[System.Serializable]

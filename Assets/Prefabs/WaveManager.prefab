@@ -43,10 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42187ecb8392444aa7a00eb85a1ac53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveCount: 1
-  manualWaves: []
+  waveCount: 0
+  _delaToStartFirstWave: 3
+  manualWaves:
+  - {fileID: 11400000, guid: 883b233147430354bba196e00d24610a, type: 2}
+  - {fileID: 11400000, guid: 744290aaff568ad4398821048310e437, type: 2}
   actualWave:
     waveNumber: 0
     waveTurnsDelay: 0
     waveTurns: []
-  spawnPoints: []
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemysContainer: {fileID: 11400000, guid: bf6f0116ace070647b990fd35147710e, type: 2}

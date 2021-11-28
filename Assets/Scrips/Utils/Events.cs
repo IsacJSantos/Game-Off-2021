@@ -20,10 +20,24 @@ public class Events : MonoBehaviour
     public static SimpleEvent OnDecreaseReloadDelay;
     #endregion
     #region PlayerSpecialAttack
+    public static SpecialTypeEvent OnChooseSpecial;
     public static FloatEvent OnHealingPlayer;
     public static Vector3FloatFloatFloatEvent OnBombExplode;
     public static SimpleEvent OnFireSuperShot;
     #endregion
+    #region WaveManager
+    public static SimpleEvent OnStartWaves;
+    public static SimpleEvent OnNextWave;
+    #endregion
+
+    #region Others(Estou com preguiça)
+    public static SimpleEvent OnShowChooseSpecialPanel;
+
+    public static SimpleEvent OnEnemyDie;
+
+    public static SimpleEvent OnWinGame;
+    #endregion
+
 
     public delegate void SimpleEvent();
     public delegate void IntEvent(int i);
@@ -31,4 +45,6 @@ public class Events : MonoBehaviour
     public delegate void BoolEvent(bool b);
 
     public delegate void Vector3FloatFloatFloatEvent( Vector3 v3,float f1,float f2, float f3);
+
+    public delegate void SpecialTypeEvent(SpecialType st);
 }

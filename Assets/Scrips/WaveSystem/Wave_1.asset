@@ -19,15 +19,9 @@ MonoBehaviour:
     - EnemyTypes:
       - amout: 3
         enemyType: 0
-      - amout: 2
-        enemyType: 1
     - EnemyTypes:
       - amout: 4
         enemyType: 0
-      - amout: 2
-        enemyType: 1
     - EnemyTypes:
       - amout: 5
         enemyType: 0
-      - amout: 4
-        enemyType: 1

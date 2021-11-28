@@ -26,14 +26,17 @@ public class CardsManager : MonoBehaviour
     }
     void ShowCard()
     {
+        Time.timeScale = 0;
         InstantiateCards();
         _cv.enabled = true;
     }
 
     void HidePanel() 
     {
+        Time.timeScale = 1;
         _cv.enabled = false;
         desableOldCards();
+        Events.OnNextWave?.Invoke();
     }
 
     void InstantiateCards()
