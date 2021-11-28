@@ -56,7 +56,6 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
     public virtual void Hit(float value)
     {
-        Debug.LogWarning($"Hit {value}");
         if (maxLife <= 0) return;
 
         maxLife -= value;
@@ -76,6 +75,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     {  
         enemyMovement.StopEnemy();
         yield return new WaitForSeconds(0.7f);
+        Events.OnEnemyDie?.Invoke();
         gameObject.SetActive(false);
     }
     public virtual void SetTarget(EnemyTargetType targetType)
