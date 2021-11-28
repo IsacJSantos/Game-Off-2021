@@ -3,8 +3,8 @@ using UnityEngine;
 public class BaseLifeSystem : MonoBehaviour
 {
     public float MaxLife { get { return _maxLife; } }
-    public GameObject takeDamageParticle;
-    public GameObject dieParticle;
+    [SerializeField] public GameObject takeDamageParticle;
+    [SerializeField] public GameObject dieParticle;
     int counter = 0;
     [SerializeField] AudioSource takeTamageSound;
     [SerializeField] AudioSource dieSound;
@@ -65,8 +65,7 @@ public class BaseLifeSystem : MonoBehaviour
         {
             if (takeDamageParticle)
             {
-                ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
-                particle.Play();
+                PlayTakeDamageParticle();
             }
 
             if (takeTamageSound)
@@ -94,21 +93,20 @@ public class BaseLifeSystem : MonoBehaviour
         }
     }
 
+    //configurar particulas
+    //  colocar o prefab da particula como objeto filho e alocar pelo inspetor
+    //  posicionar particula pela hierarquia
+    public void PlayTakeDamageParticle()
+    {
+        ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
+        particle.Play();
+    }
 
     public void PlayDieParticle()
-    //config:   colocar o prefab da particula como objeto filho e alocar pelo inspetor
-    //          posicionar particula pela hierarquia
     {
         ParticleSystem particle = dieParticle.GetComponent<ParticleSystem>();
         particle.Play();
     }
-
-    public void PlayTakeDamageParticle()
-    {
-        //GameObject clone = Instantiate(dieParticle, dieParticle.transform.position, Quaternion.identity);
-        //ParticleSystem particle = clone.GetComponent<ParticleSystem>();
-    }
-
 
     public virtual void ImproveMaxLife(float amount)
     {

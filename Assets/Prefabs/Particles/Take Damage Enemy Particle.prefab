@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5418451061312133137}
   - component: {fileID: 5418451061312133136}
   m_Layer: 0
-  m_Name: Explosion Enemy Particle
+  m_Name: Take Damage Enemy Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

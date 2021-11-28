@@ -10,6 +10,8 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     [SerializeField] protected float maxLife;
     [SerializeField] protected float AttackCooldown = 1;
     [SerializeField] protected float attackForce;
+    [SerializeField] public GameObject takeDamageParticle;
+    [SerializeField] public GameObject dieParticle;
     [SerializeField] AudioSource takeTamageSound;
     [SerializeField] AudioSource dieSound;
 
@@ -68,8 +70,14 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
             StartCoroutine(Die());
         }
 
+        //particle
+        if (takeDamageParticle)
+        {
+            PlayTakeDamageParticle();
+        }
+
         //sound
-        if (takeTamageSound.clip)
+        if (takeTamageSound)
         {
             takeTamageSound.PlayOneShot(takeTamageSound.clip, 1.0f);
         }
@@ -83,6 +91,12 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     public virtual IEnumerator Die() 
     {  
         enemyMovement.StopEnemy();
+
+        //particle
+        if (dieParticle)
+        {
+            PlayDieParticle();
+        }
 
         //sound
         if (dieSound.clip)
@@ -121,6 +135,21 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
         float z = (forceVector.z < 0 ? -1 : 1);
         _rb.AddForce(new Vector3(x, 0, z) * force, ForceMode.Force);
         Hit(damage);
+    }
+
+    //configurar particulas
+    //  colocar o prefab da particula como objeto filho e alocar pelo inspetor
+    //  posicionar particula pela hierarquia
+    public void PlayTakeDamageParticle()
+    {
+        ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
+        particle.Play();
+    }
+
+    void PlayDieParticle()
+    {
+        ParticleSystem particle = dieParticle.GetComponent<ParticleSystem>();
+        particle.Play();
     }
 }
 [System.Serializable]
