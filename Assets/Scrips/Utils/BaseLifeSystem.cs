@@ -5,6 +5,9 @@ public class BaseLifeSystem : MonoBehaviour
     public float MaxLife { get { return _maxLife; } }
     public GameObject dieParticle;
     int counter = 0;
+    [SerializeField] AudioSource takeTamageSound;
+    [SerializeField] AudioSource dieSound;
+
 
     public float Life
     {
@@ -19,7 +22,7 @@ public class BaseLifeSystem : MonoBehaviour
             {
                 _currentLife = 0;
                 _isAlive = false;
-                PlayDieParticle();
+                Die();
             }
             else 
             {
@@ -51,18 +54,33 @@ public class BaseLifeSystem : MonoBehaviour
       
     }
 
+
+    public void Die()
+    {
+        if (!IsAlive && counter < 1)
+        {
+            counter += 1; //tocar a particula e som de morte apenas uma vez
+      
+            if (dieParticle)
+            {
+                PlayDieParticle();
+            }
+
+            if (dieSound.clip)
+            {
+                dieSound.PlayOneShot(dieSound.clip, 1.0f);
+            }
+        }
+    }
+
+
     public void PlayDieParticle()
-    //tocar a particula de morte, se houver alguma
     //config:   colocar o prefab da particula como objeto filho e alocar pelo inspetor
     //          posicionar particula pela hierarquia
     {
-        if (dieParticle && !IsAlive && counter < 1)      
-        {
-            counter += 1; //tocar a particula de morte apenas uma vez
-            ParticleSystem particle = dieParticle.GetComponent<ParticleSystem>();
-            particle.Play();
-            Debug.Log(transform + "die particle");
-        }
+        ParticleSystem particle = dieParticle.GetComponent<ParticleSystem>();
+        particle.Play();
+        //Debug.Log(transform + "die particle");
     }
 
     public void PlayTakeDamageParticle()
