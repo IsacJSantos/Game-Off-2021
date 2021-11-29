@@ -1756,6 +1756,42 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e2f1bc9771f96a4eac5ae0dd1e44945, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 09757d56fdc58dc4ab05eb0ad669fce5, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43f5fc58105b43744b53acf9160c10ee, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43f5fc58105b43744b53acf9160c10ee, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43f5fc58105b43744b53acf9160c10ee, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43f5fc58105b43744b53acf9160c10ee, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 43f5fc58105b43744b53acf9160c10ee, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: manualWaves.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: df69310a55767d3468db233933dbad01, type: 2}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 589826137}

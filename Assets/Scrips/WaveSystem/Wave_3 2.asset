@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6a9650bd5ab0648b8873d7e340dbf0, type: 3}
-  m_Name: Wave_2
+  m_Name: Wave_3 2
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 3
+    waveTurnsDelay: 10
     waveTurns:
     - EnemyTypes:
-      - amout: 2
-        enemyType: 0
-    - EnemyTypes:
-      - amout: 10
+      - amout: 20
         enemyType: 0
     - EnemyTypes:
       - amout: 20
+        enemyType: 0
+    - EnemyTypes:
+      - amout: 30
         enemyType: 0
