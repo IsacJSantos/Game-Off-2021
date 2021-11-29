@@ -61,6 +61,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
 
     public virtual void Hit(float value)
     {
+        print($"HIT in {gameObject.name}");
         if (maxLife <= 0) return;
 
         maxLife -= value;
@@ -91,6 +92,7 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     public virtual IEnumerator Die() 
     {  
         enemyMovement.StopEnemy();
+        _col.enabled = false;
 
         //particle
         if (dieParticle)

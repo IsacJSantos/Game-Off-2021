@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246298949432669000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalRotation: {x: -0, y: 0.025165249, z: -0, w: 0.9996833}
+  m_LocalPosition: {x: 0, y: 0, z: 0.79999965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3706312311819227494}
@@ -38,7 +38,7 @@ Transform:
   - {fileID: 6907625289933322163}
   m_Father: {fileID: 2194387946597745455}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.884, z: 0}
 --- !u!1 &1682837352515930352
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   _bodyTransform: {fileID: 2194387946597745455}
   _speed: 800
   _bodyRb: {fileID: 2699860103369245866}
-  _bodyCollider: {fileID: 7147597869615698632}
+  _bodyCollider: {fileID: 6590855570011410589}
   playerLife: {fileID: 166785316469852415}
   _runSpeed: 1200
 --- !u!114 &166785316469852415
@@ -1096,8 +1096,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5214965858307240448}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.70689213, y: 0.017422833, z: -0.017422827, w: 0.70689213}
+  m_LocalPosition: {x: -0.06053959, y: 0, z: 0.018743897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5214965856496904941}
@@ -1107,7 +1107,7 @@ Transform:
   - {fileID: 5464230451213112822}
   m_Father: {fileID: 2194387946597745455}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -2.824}
 --- !u!212 &5214965858307240450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1521,7 +1521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194387946597745455}
   - component: {fileID: 2699860103369245866}
-  - component: {fileID: 7147597869615698632}
+  - component: {fileID: 6590855570011410589}
   m_Layer: 0
   m_Name: BodyRotation
   m_TagString: Untagged
@@ -1561,19 +1561,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!65 &7147597869615698632
-BoxCollider:
+--- !u!135 &6590855570011410589
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8667747471183632028}
-  m_Material: {fileID: 13400000, guid: 50dfa7ea881564044b8fc1752aa2f5da, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3716068, y: 1, z: 5.0489526}
-  m_Center: {x: 0.1858033, y: 0, z: 0.5809314}
+  m_Radius: 1.91
+  m_Center: {x: 0.26003382, y: 0, z: 0.96}
 --- !u!1001 &64998923486825956
 PrefabInstance:
   m_ObjectHideFlags: 0
