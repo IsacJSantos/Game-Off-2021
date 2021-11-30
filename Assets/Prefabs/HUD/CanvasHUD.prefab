@@ -107,8 +107,8 @@ RectTransform:
   m_Father: {fileID: 4111127837308809256}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8762501, y: 0.02666667}
-  m_AnchorMax: {x: 0.9912501, y: 0.120000005}
+  m_AnchorMin: {x: 0.855, y: 0.020000001}
+  m_AnchorMax: {x: 0.9912501, y: 0.124444455}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/30
+  m_text: Reloading...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -167,11 +167,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.55
+  m_fontSize: 17.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 8
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -569,35 +569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4111127837927146484}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0.0417943, a: 1}
-    key1: {r: 0.8679245, g: 0.81440705, b: 0.08597365, a: 1}
-    key2: {r: 0.049439307, g: 0.9528302, b: 0.13620809, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 9830
-    ctime1: 34078
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
   fill: {fileID: 4111127837588088912}
 --- !u!1 &4111127838192466589
 GameObject:
@@ -973,14 +944,14 @@ RectTransform:
   m_GameObject: {fileID: 4111127838398521333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.18967, y: 0.18967, z: 0.18967}
+  m_LocalScale: {x: 0.14068203, y: 0.14068203, z: 0.14068203}
   m_Children: []
   m_Father: {fileID: 4111127837308809256}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261, y: -190}
+  m_AnchoredPosition: {x: 245.6, y: -192}
   m_SizeDelta: {x: 542, y: 192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4111127838398521224
@@ -1278,35 +1249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4111127839025867908}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0.0417943, a: 1}
-    key1: {r: 0.8679245, g: 0.81440705, b: 0.08597365, a: 1}
-    key2: {r: 0.049439307, g: 0.9528302, b: 0.13620809, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 9830
-    ctime1: 34078
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
   fill: {fileID: 4111127838633175526}
 --- !u!1 &4111127839225330288
 GameObject:
