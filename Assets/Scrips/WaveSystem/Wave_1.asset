@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 3
+    waveTurnsDelay: 5
     waveTurns:
     - EnemyTypes:
       - amout: 3

@@ -158,6 +158,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 6408202071722710706, guid: f158e987178de5644a61b28a9346cf95, type: 3}
   m_PrefabInstance: {fileID: 882637010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &599958983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5456743715980339615, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+  m_PrefabInstance: {fileID: 1380755576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680824865
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4111127837308809239, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4111127837308809256, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
       propertyPath: m_Pivot.x
@@ -693,6 +704,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4111127838351001830, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111127838351001830, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4111127838633175525, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -700,6 +719,14 @@ PrefabInstance:
     - target: {fileID: 4111127838633175525, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322508515414439646, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+      propertyPath: m_text
+      value: 0/0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322508515414439646, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
@@ -723,6 +750,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f37ddc52a799624fbb7ef26723451eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1380755579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8322508515414439646, guid: 6d96c7e326b3104498abb8677613f800, type: 3}
+  m_PrefabInstance: {fileID: 1380755576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1401639781
@@ -1060,6 +1098,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: _HUDwaveText
+      value: 
+      objectReference: {fileID: 1380755579}
+    - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
+      propertyPath: _HUDTurnTimeText
+      value: 
+      objectReference: {fileID: 599958983}
     - target: {fileID: 2454472201727288796, guid: 631fcec4c22d567409bfdd543e2cbdf6, type: 3}
       propertyPath: manualWaves.Array.size
       value: 2

@@ -81,12 +81,12 @@ public class BaseLifeSystem : MonoBehaviour
         {
             counter += 1; //tocar a particula e som de morte apenas uma vez
       
-            if (dieParticle)
+            if (dieParticle != null)
             {
                 PlayDieParticle();
             }
 
-            if (dieSound.clip)
+            if (dieSound != null && dieSound.clip)
             {
                 dieSound.PlayOneShot(dieSound.clip, 1.0f);
             }

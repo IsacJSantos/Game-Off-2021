@@ -19,7 +19,7 @@ public class PlayerSpecial : MonoBehaviour
     [SerializeField] AudioSource _superShot1;
 
     float delay;
-
+    Coroutine coroutine;
     private void Awake()
     {
         Events.OnDecreaseAbilityCooldown += DecreaseAbilityCooldown;
@@ -49,8 +49,11 @@ public class PlayerSpecial : MonoBehaviour
         if (Time.time >= delay)
         {
             delay = Time.time + _cooldown;
-            StartCoroutine(UpdateHud());
-            print("Special Attack!!!");
+
+            if (coroutine != null)
+                StopCoroutine(coroutine);
+            coroutine = StartCoroutine(UpdateHud());
+
 
             switch (_specialType)
             {
@@ -71,10 +74,9 @@ public class PlayerSpecial : MonoBehaviour
     IEnumerator UpdateHud()
     {
         _HUDImage.fillAmount = 1;
-        float x = 1 / _cooldown; 
+        float x = 1 / _cooldown;
         while (Time.time < delay)
         {
-            print(_HUDImage.fillAmount);
             _HUDImage.fillAmount -= x * Time.deltaTime;
             yield return null;
         }

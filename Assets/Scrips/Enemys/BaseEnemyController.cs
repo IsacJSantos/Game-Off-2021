@@ -125,7 +125,6 @@ public class BaseEnemyController : MonoBehaviour, IBeatable
     {
         if (Vector3.Distance(transform.position, explosionPos) > range)
         {
-            print("Returning");
             return;
         }
         Vector3 forcePoint = _col.ClosestPointOnBounds(explosionPos);

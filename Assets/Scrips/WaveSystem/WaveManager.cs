@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Threading;
-using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -13,7 +12,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] EnemysContainer enemysContainer;
     [SerializeField] int _enemysCount;
 
-    float spawnDelay = 1f;
+    [SerializeField] TextMeshProUGUI _HUDwaveText;
+    [SerializeField] TextMeshProUGUI _HUDTurnTimeText;
+
+    float spawnDelay = 0.9f;
     bool _isFirst;
     bool _checkRemaningEnemys;
     private void Awake()
@@ -59,10 +61,12 @@ public class WaveManager : MonoBehaviour
     }
     IEnumerator StartManualWave()
     {
+        _HUDwaveText.text = $"{waveCount + 1}/{manualWaves.Length}";
         actualWave = manualWaves[waveCount].wave;
         print($"Wave number: {actualWave.waveNumber}");
         yield return StartCoroutine(StartWaveTurn(actualWave.waveTurns));
         waveCount++;
+       
     }
 
     IEnumerator StartWaveTurn(WaveTurn[] waveTurns)
@@ -71,7 +75,7 @@ public class WaveManager : MonoBehaviour
         {
             print("Waiting for next wave turn");
 
-            yield return new WaitForSeconds(_isFirst ? _delaToStartFirstWave : actualWave.waveTurnsDelay);
+            yield return StartCoroutine(CountDownTurnTime(i == 0 ? _delaToStartFirstWave : actualWave.waveTurnsDelay));
 
             yield return StartCoroutine(SpawnEnemys(waveTurns[i].EnemyTypes));
         }
@@ -111,6 +115,18 @@ public class WaveManager : MonoBehaviour
 
             }
         }
+    }
+
+    IEnumerator CountDownTurnTime(float turnDelay) 
+    {
+        float count = turnDelay;
+        while (count >= 0)
+        {
+            _HUDTurnTimeText.text = $"{count}s";
+            count--;
+            yield return new WaitForSeconds(1);
+        }
+      
     }
     GameObject GetEnemyPrefab(int index)
     {

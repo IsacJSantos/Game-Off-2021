@@ -81,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
             PlaySound("SHOT1");
         }
        
+       
     }
 
     IEnumerator Reload()
@@ -114,6 +115,12 @@ public class PlayerAttack : MonoBehaviour
     }
     bool CanFire()
     {
+        if (_currentBullets <= 0)
+        {
+            if (!_isReloading)
+                StartCoroutine(Reload());
+        }
+
         return time <= Time.time &&
             !_isReloading && _currentBullets > 0;
     }
