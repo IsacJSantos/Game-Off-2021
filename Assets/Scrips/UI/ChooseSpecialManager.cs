@@ -15,6 +15,10 @@ public class ChooseSpecialManager : MonoBehaviour
     {
         Events.OnShowChooseSpecialPanel -= ShowPanel;
     }
+    private void Start()
+    {
+        ShowPanel();
+    }
 
     void ShowPanel()
     {

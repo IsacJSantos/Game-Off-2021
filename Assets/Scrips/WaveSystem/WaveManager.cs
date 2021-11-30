@@ -13,7 +13,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] EnemysContainer enemysContainer;
     [SerializeField] int _enemysCount;
 
-    float spawnDelay = 0.3f;
+    float spawnDelay = 1f;
     bool _isFirst;
     bool _checkRemaningEnemys;
     private void Awake()

@@ -9,4 +9,9 @@ public class AnthillLife : BaseLifeSystem
     {
         Events.OnImproveAnthillLife -= ImproveMaxLife;
     }
+
+    public override void ImproveMaxLife(float amount)
+    {
+        Life += MaxLife * (amount / 100);
+    }
 }

@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (_isStopped) return false;
 
-            return (Vector3.Distance(transform.position, target) <= 5);
+            return (Vector3.Distance(transform.position, target) <= 2.7);
         }
     }
     private void Awake()
