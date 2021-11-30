@@ -10,9 +10,10 @@ public class BombController : MonoBehaviour
     [SerializeField] float _totalDamage;
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _initialForce;
-    [SerializeField] AudioSource _explodeBombSound;
     [SerializeField] float destroyAfterTimeDelay;
     [SerializeField] GameObject hideBomb;
+    [SerializeField] AudioSource _bombWickFizz;
+    [SerializeField] AudioSource _explodeBombSound;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class BombController : MonoBehaviour
     }
     IEnumerator CountDown() 
     {
+        _bombWickFizz.PlayOneShot(_bombWickFizz.clip, 1.0f);
         yield return new WaitForSeconds(_timeToExplode);
         Explode(); 
     }
@@ -36,6 +38,11 @@ public class BombController : MonoBehaviour
         Events.OnBombExplode?.Invoke(transform.position, _explosionForce, _range, _totalDamage);
         
         //sound
+        if (_bombWickFizz.isPlaying)
+        {
+            _bombWickFizz.Stop();
+        } 
+        
         if (_explodeBombSound.clip)
         {
         _explodeBombSound.PlayOneShot(_explodeBombSound.clip, 1.0f);

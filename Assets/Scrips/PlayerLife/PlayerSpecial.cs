@@ -15,7 +15,6 @@ public class PlayerSpecial : MonoBehaviour
     [Header("Values")]
     [SerializeField] float _healingPercent;
     [SerializeField] AudioSource _healing1;
-    [SerializeField] AudioSource _throwBomb1;
     [SerializeField] AudioSource _superShot1;
 
     float delay;
@@ -98,12 +97,6 @@ public class PlayerSpecial : MonoBehaviour
     {
         print("Bomb");
         Instantiate(_bombPrefab, bulletOut.position, Quaternion.Euler(0, _bodyTransform.rotation.eulerAngles.y, 0));
-
-        //sound
-        if (_throwBomb1.clip)
-        {
-            _throwBomb1.PlayOneShot(_throwBomb1.clip, 1.0f);
-        }
     }
     void SuperShot()
     {

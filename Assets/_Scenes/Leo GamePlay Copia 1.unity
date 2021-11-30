@@ -1335,6 +1335,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12009140, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009140, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009141, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009141, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009147, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009147, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12009149, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271439237, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271439237, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271439238, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271439238, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816745961, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816745961, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5214965857712697800, guid: b385b53abaccf174986a15d602a360e0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1383,7 +1435,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 12009148, guid: b385b53abaccf174986a15d602a360e0, type: 3}
+    - {fileID: 12009149, guid: b385b53abaccf174986a15d602a360e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b385b53abaccf174986a15d602a360e0, type: 3}
 --- !u!1 &1545665518
 GameObject:

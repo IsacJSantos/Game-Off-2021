@@ -74,11 +74,12 @@ public class PlayerAttack : MonoBehaviour
                                                  ).GetComponent<BulletController>();
 
             bullet.damage = _fireDamage;
-            //PoolingSystem.Instancia.GetObjeto("Bullet", bulletOut.transform.position, Quaternion.Euler(0, _bodyTransform.localRotation.eulerAngles.y, 0.0f));
             _currentBullets--;
-            _bulletsHUDText.text = $"{_currentBullets}/{_magazineLength}";
+
             //sound
             PlaySound("SHOT1");
+
+            _bulletsHUDText.text = $"{_currentBullets}/{_magazineLength}";
         }
        
        
@@ -87,10 +88,12 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator Reload()
     {
         _isReloading = true;
-        _bulletsHUDText.text = "Reloading...";
+
         //sound
         PlaySound("RELOAD1");
-        
+
+        _bulletsHUDText.text = "Reloading...";
+
         yield return new WaitForSeconds(_reloadDelay);
         _currentBullets = _magazineLength;
         _bulletsHUDText.text = $"{_currentBullets}/{_magazineLength}";
