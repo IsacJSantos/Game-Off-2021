@@ -12,15 +12,24 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     Vector3 movement;
     float addAngle = 270.0f;
     [SerializeField] PlayerLife playerLife;
-    [SerializeField] float _runSpeed;
+    [SerializeField] BaseLifeSystem baseLifeSystem;
 
+    [SerializeField] float _runSpeed;
+    [SerializeField] LifeBar lifeBar;
     bool _canMove = true;
     private void Awake()
     {
         _defaultSpeed = _speed;
         Events.OnHealingPlayer += HealPlayer;
         Events.OnFireSuperShot += OnFireSuperShot;
+        
     }
+
+    void Start()
+    {
+        lifeBar.SetMaxLife(playerLife.MaxLife);
+    }
+   
     private void OnDestroy()
     {
         Events.OnHealingPlayer -= HealPlayer;
@@ -82,7 +91,9 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 
     public void Hit(float value)
     {
-        playerLife.Life -= value;
+       // playerLife.Life -= value;
+
+        lifeBar.SetLife(baseLifeSystem.Life);
 
         if (!playerLife.IsAlive)
             Events.OnPlayerDie?.Invoke();
@@ -93,6 +104,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     {
         if (playerLife.IsAlive)
             playerLife.Life += playerLife.MaxLife * (percent / 100);
+          
     }
 
     void OnFireSuperShot()
@@ -107,4 +119,6 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         yield return new WaitForSeconds(0.5f);
         _canMove = true;
     }
+
+    
 }
