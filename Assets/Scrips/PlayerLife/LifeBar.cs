@@ -19,7 +19,6 @@ public class LifeBar : MonoBehaviour
 
     public void SetLife(float life,float maxLife)
     {
-        print("SetLife");
         float value = (1 / maxLife) * life;
         slider.value = value;
        /* slider.value = life;

@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerSpecial : MonoBehaviour
 {
@@ -10,12 +10,13 @@ public class PlayerSpecial : MonoBehaviour
     [SerializeField] Transform bulletOut;
     [SerializeField] Transform _bodyTransform;
 
+    [SerializeField] Image _HUDImage;
+
     [Header("Values")]
     [SerializeField] float _healingPercent;
     [SerializeField] AudioSource _healing1;
     [SerializeField] AudioSource _throwBomb1;
     [SerializeField] AudioSource _superShot1;
-
 
     float delay;
 
@@ -26,7 +27,7 @@ public class PlayerSpecial : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     private void OnDestroy()
@@ -48,7 +49,8 @@ public class PlayerSpecial : MonoBehaviour
         if (Time.time >= delay)
         {
             delay = Time.time + _cooldown;
-            print("Special Attack!!!");     
+            StartCoroutine(UpdateHud());
+            print("Special Attack!!!");
 
             switch (_specialType)
             {
@@ -66,6 +68,18 @@ public class PlayerSpecial : MonoBehaviour
             }
         }
     }
+    IEnumerator UpdateHud()
+    {
+        _HUDImage.fillAmount = 1;
+        float x = 1 / _cooldown; 
+        while (Time.time < delay)
+        {
+            print(_HUDImage.fillAmount);
+            _HUDImage.fillAmount -= x * Time.deltaTime;
+            yield return null;
+        }
+        _HUDImage.fillAmount = 0;
+    }
 
     void Healing()
     {
@@ -78,18 +92,18 @@ public class PlayerSpecial : MonoBehaviour
             _healing1.PlayOneShot(_healing1.clip, 1.0f);
         }
     }
-    void Pump() 
+    void Pump()
     {
         print("Bomb");
         Instantiate(_bombPrefab, bulletOut.position, Quaternion.Euler(0, _bodyTransform.rotation.eulerAngles.y, 0));
-        
+
         //sound
         if (_throwBomb1.clip)
         {
             _throwBomb1.PlayOneShot(_throwBomb1.clip, 1.0f);
         }
     }
-    void SuperShot() 
+    void SuperShot()
     {
         print("SuperShot");
         Events.OnFireSuperShot?.Invoke();
@@ -101,7 +115,7 @@ public class PlayerSpecial : MonoBehaviour
         }
     }
 
-    void DecreaseAbilityCooldown() 
+    void DecreaseAbilityCooldown()
     {
         if (_cooldown <= 1) return;
         _cooldown -= 0.5f;
