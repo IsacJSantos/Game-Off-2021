@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 
     void Start()
     {
-        lifeBar.SetMaxLife(playerLife.MaxLife);
+       // lifeBar.SetMaxLife(playerLife.MaxLife);
     }
    
     private void OnDestroy()
@@ -91,9 +91,9 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 
     public void Hit(float value)
     {
-       // playerLife.Life -= value;
+        playerLife.Life -= value;
 
-        lifeBar.SetLife(baseLifeSystem.Life);
+       // lifeBar.SetLife(baseLifeSystem.Life);
 
         if (!playerLife.IsAlive)
             Events.OnPlayerDie?.Invoke();

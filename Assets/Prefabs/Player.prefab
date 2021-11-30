@@ -337,7 +337,9 @@ MonoBehaviour:
   _bodyRb: {fileID: 2699860103369245866}
   _bodyCollider: {fileID: 6590855570011410589}
   playerLife: {fileID: 166785316469852415}
+  baseLifeSystem: {fileID: 166785316469852415}
   _runSpeed: 1200
+  lifeBar: {fileID: 0}
 --- !u!114 &166785316469852415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +356,7 @@ MonoBehaviour:
   dieParticle: {fileID: 2687039781739997758}
   takeTamageSound: {fileID: 1271439238}
   dieSound: {fileID: 1271439237}
+  _lifeBar: {fileID: 0}
   _baseLife: 20
   _currentLife: 0
   _maxLife: 20

@@ -12,7 +12,7 @@ public class AntHillController : MonoBehaviour, IBeatable, IAgentTarget
 
         anthillLife.Life -= value;
 
-        fillLife.fillAmount = ((1 / anthillLife.MaxLife) * anthillLife.Life);
+        //fillLife.fillAmount = ((1 / anthillLife.MaxLife) * anthillLife.Life);
 
 
         if (!anthillLife.IsAlive)

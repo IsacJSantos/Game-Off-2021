@@ -79,6 +79,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   _isStopped: 0
+  attackDistance: 5
 --- !u!114 &1467508412850557326
 MonoBehaviour:
   m_ObjectHideFlags: 0

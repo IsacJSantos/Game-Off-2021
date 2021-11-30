@@ -8,7 +8,7 @@ public class BaseLifeSystem : MonoBehaviour
     int counter = 0;
     [SerializeField] AudioSource takeTamageSound;
     [SerializeField] AudioSource dieSound;
-
+    [SerializeField] LifeBar _lifeBar;
     public float Life
     {
         get
@@ -18,7 +18,7 @@ public class BaseLifeSystem : MonoBehaviour
         set
         {
             _currentLife = value;
-
+            _lifeBar.SetLife(value,_maxLife);
             if (_currentLife <= 0)
             {
                 _currentLife = 0;
