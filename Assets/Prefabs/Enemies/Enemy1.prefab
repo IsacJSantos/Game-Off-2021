@@ -79,7 +79,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   _isStopped: 0
-  attackDistance: 5
+  attackDistance: 3
 --- !u!114 &1467508412850557326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,9 +95,9 @@ MonoBehaviour:
   _col: {fileID: 1467508412850557324}
   _rb: {fileID: 1467508412850557325}
   targetType: 0
-  maxLife: 5
-  AttackCooldown: 1.7
-  attackForce: 1
+  maxLife: 3
+  AttackCooldown: 2
+  attackForce: 0.6
   takeDamageParticle: {fileID: 7596919802133246636}
   dieParticle: {fileID: 8451571197921115868}
   takeTamageSound: {fileID: 8559728296659522182}
@@ -130,8 +130,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.58
-  m_Center: {x: 0, y: 0, z: -0.24}
+  m_Radius: 0.63
+  m_Center: {x: 0, y: 0, z: -0.11}
 --- !u!114 &1467508412850557323
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,14 +6,18 @@ public class WaveTurn
 }
 
 [System.Serializable]
-public class EnemySpawn 
+public class EnemySpawn
 {
     public int amout;
     public EnemyChoose enemyType;
 }
 [System.Serializable]
-public enum EnemyChoose 
+public enum EnemyChoose
 {
     Enemy1,
-    Enemy2
+    Enemy2,
+    Enemy3,
+    Enemy4,
+    Enemy5,
+    Enemy6
 }

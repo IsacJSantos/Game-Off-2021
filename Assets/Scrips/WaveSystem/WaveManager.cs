@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _HUDwaveText;
     [SerializeField] TextMeshProUGUI _HUDTurnTimeText;
 
-    float spawnDelay = 0.9f;
+    float spawnDelay = 0.85f;
     bool _isFirst;
     bool _checkRemaningEnemys;
     private void Awake()
@@ -105,6 +105,7 @@ public class WaveManager : MonoBehaviour
                 _checkRemaningEnemys = false;
                 if (waveCount <= manualWaves.Length - 1)
                 {
+                    Events.OnEndWave?.Invoke();
                     Events.OnShowCards?.Invoke();
                 }
                 else

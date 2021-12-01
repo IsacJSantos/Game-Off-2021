@@ -113,7 +113,7 @@ public class PlayerSpecial : MonoBehaviour
     void DecreaseAbilityCooldown()
     {
         if (_cooldown <= 1) return;
-        _cooldown -= 0.5f;
+        _cooldown -= 0.8f;
     }
 
     void ChooseSpecial(SpecialType specialType)

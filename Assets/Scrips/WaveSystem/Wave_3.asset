@@ -14,9 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 3
+    waveTurnsDelay: 10
     waveTurns:
     - EnemyTypes:
+      - amout: 5
+        enemyType: 0
+      - amout: 3
+        enemyType: 1
+      - amout: 5
+        enemyType: 0
+    - EnemyTypes:
+      - amout: 7
+        enemyType: 0
+      - amout: 3
+        enemyType: 1
       - amout: 5
         enemyType: 0
       - amout: 5
@@ -24,3 +35,9 @@ MonoBehaviour:
     - EnemyTypes:
       - amout: 10
         enemyType: 0
+      - amout: 5
+        enemyType: 1
+      - amout: 5
+        enemyType: 0
+      - amout: 3
+        enemyType: 1

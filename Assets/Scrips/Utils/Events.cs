@@ -28,6 +28,7 @@ public class Events : MonoBehaviour
     #region WaveManager
     public static SimpleEvent OnStartWaves;
     public static SimpleEvent OnNextWave;
+    public static SimpleEvent OnEndWave;
     #endregion
 
     #region Others(Estou com preguiça)

@@ -22,12 +22,12 @@ MonoBehaviour:
       - amout: 2
         enemyType: 1
     - EnemyTypes:
-      - amout: 4
+      - amout: 5
         enemyType: 0
       - amout: 3
         enemyType: 1
     - EnemyTypes:
-      - amout: 5
+      - amout: 7
         enemyType: 0
-      - amout: 2
+      - amout: 4
         enemyType: 1

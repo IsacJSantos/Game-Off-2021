@@ -48,6 +48,10 @@ MonoBehaviour:
   manualWaves:
   - {fileID: 11400000, guid: 883b233147430354bba196e00d24610a, type: 2}
   - {fileID: 11400000, guid: 744290aaff568ad4398821048310e437, type: 2}
+  - {fileID: 11400000, guid: 33c6cfa3b83afa443aad65f7d44b934d, type: 2}
+  - {fileID: 11400000, guid: e20265b1262c8064b9a91fe0cbb23134, type: 2}
+  - {fileID: 11400000, guid: 41087fd109c3ee64c82de2f7249e5dab, type: 2}
+  - {fileID: 11400000, guid: 39ec329ff49605c4896cbc41758a3107, type: 2}
   actualWave:
     waveNumber: 0
     waveTurnsDelay: 0
@@ -56,5 +60,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   enemysContainer: {fileID: 11400000, guid: bf6f0116ace070647b990fd35147710e, type: 2}
+  _enemysCount: 0
+  _HUDwaveText: {fileID: 0}
+  _HUDTurnTimeText: {fileID: 0}

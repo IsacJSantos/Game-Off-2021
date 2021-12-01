@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         _defaultSpeed = _speed;
         Events.OnHealingPlayer += HealPlayer;
         Events.OnFireSuperShot += OnFireSuperShot;
-        
+        Events.OnEndWave += ResetPlayreLife;
     }
 
     void Start()
@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     private void OnDestroy()
     {
         Events.OnHealingPlayer -= HealPlayer;
-        Events.OnFireSuperShot += OnFireSuperShot;
+        Events.OnFireSuperShot -= OnFireSuperShot;
+        Events.OnEndWave -= ResetPlayreLife;
     }
     private void Update()
     {
@@ -88,7 +89,10 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     {
         return _bodyCollider.ClosestPointOnBounds(objectPos);
     }
-
+    public void ResetPlayreLife()
+    {
+        playerLife.Life = playerLife.MaxLife;
+    }
     public void Hit(float value)
     {
         playerLife.Life -= value;
