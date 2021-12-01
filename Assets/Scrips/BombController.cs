@@ -12,6 +12,7 @@ public class BombController : MonoBehaviour
     [SerializeField] float _initialForce;
     [SerializeField] float destroyAfterTimeDelay;
     [SerializeField] GameObject hideBomb;
+    [SerializeField] GameObject _bombParticle;
     [SerializeField] AudioSource _bombWickFizz;
     [SerializeField] AudioSource _explodeBombSound;
 
@@ -48,6 +49,11 @@ public class BombController : MonoBehaviour
         _explodeBombSound.PlayOneShot(_explodeBombSound.clip, 1.0f);
         }
 
+        if (_bombParticle)
+        {
+            PlayBombParticle();
+        }
+
         //esconder o objeto antes de destrui-lo
         GetComponent<Rigidbody>().isKinematic = true;
         hideBomb.SetActive(false);
@@ -55,5 +61,11 @@ public class BombController : MonoBehaviour
         //desabilitar o gameobject apos execucao do som
         IEnumerator destroyGameObject = DestroyGameObject(destroyAfterTimeDelay);
         StartCoroutine(destroyGameObject);
+    }
+
+    void PlayBombParticle()
+    {
+        ParticleSystem particle = _bombParticle.GetComponent<ParticleSystem>();
+        particle.Play();
     }
 }
