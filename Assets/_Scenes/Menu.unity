@@ -3037,11 +3037,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Movement: "ASDW"
+  m_Text: 'Movement: "AWSD"
 
     Fire: "Left mouse"
 
     Special: "E"
+
+    Run: "Shift"
 
 '
 --- !u!222 &1747318755
