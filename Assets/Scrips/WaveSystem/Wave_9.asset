@@ -10,42 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6a9650bd5ab0648b8873d7e340dbf0, type: 3}
-  m_Name: Wave_6
+  m_Name: Wave_9
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 10
+    waveTurnsDelay: 17
     waveTurns:
     - EnemyTypes:
+      - amout: 30
+        enemyType: 2
+      - amout: 10
+        enemyType: 3
       - amout: 8
-        enemyType: 2
-      - amout: 4
-        enemyType: 0
-      - amout: 10
-        enemyType: 2
-      - amout: 5
         enemyType: 1
-    - EnemyTypes:
-      - amout: 5
-        enemyType: 2
-      - amout: 4
-        enemyType: 1
-      - amout: 7
-        enemyType: 2
-      - amout: 4
-        enemyType: 1
-      - amout: 10
-        enemyType: 2
-    - EnemyTypes:
-      - amout: 10
-        enemyType: 0
-      - amout: 5
-        enemyType: 1
-      - amout: 10
-        enemyType: 2
-      - amout: 5
-        enemyType: 0
       - amout: 15
         enemyType: 2
-      - amout: 5
+    - EnemyTypes:
+      - amout: 20
+        enemyType: 2
+      - amout: 9
+        enemyType: 3
+      - amout: 27
+        enemyType: 2
+      - amout: 10
         enemyType: 1
+      - amout: 30
+        enemyType: 2
+    - EnemyTypes:
+      - amout: 35
+        enemyType: 0
+      - amout: 12
+        enemyType: 3
+      - amout: 30
+        enemyType: 2
+      - amout: 10
+        enemyType: 3
+      - amout: 30
+        enemyType: 2

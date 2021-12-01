@@ -23,11 +23,13 @@ public class ChooseSpecialManager : MonoBehaviour
     void ShowPanel()
     {
         _cv.enabled = true;
+        Time.timeScale = 0;
     }
 
     public void ChooseOne(int specialType)
     {
         _cv.enabled = false;
+        Time.timeScale = 1;
         switch (specialType)
         {
             case 0:

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -111,7 +112,8 @@ public class WaveManager : MonoBehaviour
                 else
                 {
                     Debug.LogWarning("Victory");
-                    Events.OnWinGame?.Invoke();
+                    SceneManager.LoadScene(2);
+                    //Events.OnWinGame?.Invoke();
                 }
 
             }

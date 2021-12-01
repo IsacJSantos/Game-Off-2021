@@ -52,6 +52,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e20265b1262c8064b9a91fe0cbb23134, type: 2}
   - {fileID: 11400000, guid: 41087fd109c3ee64c82de2f7249e5dab, type: 2}
   - {fileID: 11400000, guid: 39ec329ff49605c4896cbc41758a3107, type: 2}
+  - {fileID: 11400000, guid: a386b1dfc42d70142a77dc5fbd215c15, type: 2}
+  - {fileID: 11400000, guid: 16bf98c27ced30f4baa23c33d2f4cf43, type: 2}
+  - {fileID: 11400000, guid: 741fd45b365f665498cb0ea60c5694f0, type: 2}
+  - {fileID: 11400000, guid: 1367541a16819fe4bbd75b55b06f2e33, type: 2}
   actualWave:
     waveNumber: 0
     waveTurnsDelay: 0

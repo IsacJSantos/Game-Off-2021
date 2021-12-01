@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameOverPanel : MonoBehaviour
@@ -18,7 +17,7 @@ public class GameOverPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _cv.enabled = false;
     }
 
     // Update is called once per frame
@@ -27,6 +26,11 @@ public class GameOverPanel : MonoBehaviour
         
     }
 
+    public void BackToMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
     void ShowGameOverPanel() 
     {
         _cv.enabled = true;

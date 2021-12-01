@@ -14,32 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     waveNumber: 1
-    waveTurnsDelay: 13
+    waveTurnsDelay: 10
     waveTurns:
     - EnemyTypes:
       - amout: 6
         enemyType: 0
       - amout: 3
         enemyType: 2
-      - amout: 4
+      - amout: 7
         enemyType: 2
       - amout: 5
         enemyType: 1
-    - EnemyTypes:
-      - amout: 3
-        enemyType: 2
-      - amout: 3
-        enemyType: 1
-      - amout: 5
-        enemyType: 0
     - EnemyTypes:
       - amout: 10
-        enemyType: 0
-      - amout: 5
+        enemyType: 2
+      - amout: 3
         enemyType: 1
-      - amout: 5
+      - amout: 7
+        enemyType: 0
+    - EnemyTypes:
+      - amout: 6
+        enemyType: 0
+      - amout: 3
+        enemyType: 1
+      - amout: 15
         enemyType: 2
       - amout: 6
         enemyType: 1
-      - amout: 6
+      - amout: 10
         enemyType: 1
