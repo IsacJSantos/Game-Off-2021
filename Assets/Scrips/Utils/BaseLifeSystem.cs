@@ -3,10 +3,8 @@ using UnityEngine;
 public class BaseLifeSystem : MonoBehaviour
 {
     public float MaxLife { get { return _maxLife; } }
-    [SerializeField] public GameObject takeDamageParticle;
     [SerializeField] public GameObject dieParticle;
     int counter = 0;
-    [SerializeField] AudioSource takeTamageSound;
     [SerializeField] AudioSource dieSound;
     [SerializeField] LifeBar _lifeBar;
     public float Life
@@ -24,9 +22,6 @@ public class BaseLifeSystem : MonoBehaviour
                 _currentLife = 0;
                 _isAlive = false;
                 Die();
-            } else if (_currentLife > 0 && _isAlive)
-            {
-                TakeDamage();
             }
             else 
             {
@@ -59,22 +54,6 @@ public class BaseLifeSystem : MonoBehaviour
       
     }
 
-    public void TakeDamage()
-    {
-        if (IsAlive)
-        {
-            if (takeDamageParticle)
-            {
-                PlayTakeDamageParticle();
-            }
-
-            if (takeTamageSound)
-            {
-                takeTamageSound.PlayOneShot(takeTamageSound.clip, 1.0f);
-            }
-        }
-    }
-
     public void Die()
     {
         if (!IsAlive && counter < 1)
@@ -96,11 +75,7 @@ public class BaseLifeSystem : MonoBehaviour
     //configurar particulas
     //  colocar o prefab da particula como objeto filho e alocar pelo inspetor
     //  posicionar particula pela hierarquia
-    public void PlayTakeDamageParticle()
-    {
-        ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
-        particle.Play();
-    }
+
 
     public void PlayDieParticle()
     {

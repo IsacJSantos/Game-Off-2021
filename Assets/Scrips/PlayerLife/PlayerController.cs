@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     [SerializeField] float _runSpeed;
     [SerializeField] LifeBar lifeBar;
     bool _canMove = true;
+    [SerializeField] public GameObject takeDamageParticle;
+    [SerializeField] AudioSource takeTamageSound;
+
     private void Awake()
     {
         _defaultSpeed = _speed;
@@ -101,8 +104,10 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
 
         if (!playerLife.IsAlive)
             Events.OnPlayerDie?.Invoke();
+
+
+        TakeDamage();
     }
-   
 
     void HealPlayer(float percent)
     {
@@ -124,5 +129,22 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         _canMove = true;
     }
 
-    
+    public void PlayTakeDamageParticle()
+    {
+        ParticleSystem particle = takeDamageParticle.GetComponent<ParticleSystem>();
+        particle.Play();
+    }
+
+    public void TakeDamage()
+    {
+        if (takeDamageParticle)
+        {
+            PlayTakeDamageParticle();
+        }
+
+        if (takeTamageSound)
+        {
+            takeTamageSound.PlayOneShot(takeTamageSound.clip, 1.0f);
+        }
+    }
 }

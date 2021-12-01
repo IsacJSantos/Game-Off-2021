@@ -338,6 +338,8 @@ MonoBehaviour:
   baseLifeSystem: {fileID: 166785316469852415}
   _runSpeed: 1200
   lifeBar: {fileID: 0}
+  takeDamageParticle: {fileID: 5464230451213112779}
+  takeTamageSound: {fileID: 1271439238}
 --- !u!114 &166785316469852415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,9 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493c59108cfed434792299c59e92d850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  takeDamageParticle: {fileID: 5464230451213112779}
   dieParticle: {fileID: 2687039781739997758}
-  takeTamageSound: {fileID: 1271439238}
   dieSound: {fileID: 1271439237}
   _lifeBar: {fileID: 0}
   _baseLife: 20
