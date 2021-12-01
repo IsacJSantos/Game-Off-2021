@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     [SerializeField] LifeBar lifeBar;
     bool _canMove = true;
     [SerializeField] public GameObject takeDamageParticle;
+    [SerializeField] public GameObject healingParticle;
     [SerializeField] AudioSource takeTamageSound;
 
     private void Awake()
@@ -112,8 +113,10 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
     void HealPlayer(float percent)
     {
         if (playerLife.IsAlive)
+        {
             playerLife.Life += playerLife.MaxLife * (percent / 100);
-          
+            PlayHealingParticle();
+        }        
     }
 
     void OnFireSuperShot()
@@ -127,6 +130,12 @@ public class PlayerController : MonoBehaviour, IAgentTarget, IBeatable
         _canMove = false;
         yield return new WaitForSeconds(0.5f);
         _canMove = true;
+    }
+
+    public void PlayHealingParticle()
+    {
+        ParticleSystem particle = healingParticle.GetComponent<ParticleSystem>();
+        particle.Play();
     }
 
     public void PlayTakeDamageParticle()

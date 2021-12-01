@@ -339,6 +339,7 @@ MonoBehaviour:
   _runSpeed: 1200
   lifeBar: {fileID: 0}
   takeDamageParticle: {fileID: 5464230451213112779}
+  healingParticle: {fileID: 4297710668999279286}
   takeTamageSound: {fileID: 1271439238}
 --- !u!114 &166785316469852415
 MonoBehaviour:
@@ -1012,6 +1013,7 @@ Transform:
   - {fileID: 9203428140014923998}
   - {fileID: 2687039781739997699}
   - {fileID: 5464230451213112822}
+  - {fileID: 4297710668999279243}
   m_Father: {fileID: 2194387946597745455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -2.824}
@@ -1614,4 +1616,71 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5418451061312133167, guid: d0dd9f33db1b5884d89cc93c5006cd9f, type: 3}
   m_PrefabInstance: {fileID: 7960249753783874065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8112880262830021273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5214965858307240451}
+    m_Modifications:
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418451061312133167, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+      propertyPath: m_Name
+      value: Healing Special Particle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+--- !u!4 &4297710668999279243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5418451061312133138, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+  m_PrefabInstance: {fileID: 8112880262830021273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4297710668999279286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5418451061312133167, guid: 06ffd7039741b3c4c97d66a8bb3d04b6, type: 3}
+  m_PrefabInstance: {fileID: 8112880262830021273}
   m_PrefabAsset: {fileID: 0}
