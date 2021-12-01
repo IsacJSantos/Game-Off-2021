@@ -2559,7 +2559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NOME DO JOGO
+  m_Text: ANTHILL DEFENDER
 --- !u!222 &1550606195
 CanvasRenderer:
   m_ObjectHideFlags: 0
