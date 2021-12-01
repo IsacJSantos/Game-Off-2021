@@ -358,7 +358,7 @@ MonoBehaviour:
   _lifeBar: {fileID: 0}
   _baseLife: 20
   _currentLife: 0
-  _maxLife: 30
+  _maxLife: 35
   _isAlive: 0
 --- !u!114 &4573867428048626301
 MonoBehaviour:
@@ -394,9 +394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyTransform: {fileID: 2194387946597745455}
-  bulletPrefab: {fileID: 4348391111054705092, guid: 098419f38e0c5f140a8c03a4be0c0302, type: 3}
+  bulletPrefab: {fileID: 4348391111054705092, guid: 7f9590ecd7c1efa419b86a14ff6e4a59, type: 3}
   bulletOut: {fileID: 1682837352515930352}
-  _magazineLength: 20
+  _magazineLength: 25
   _currentBullets: 0
   _reloadDelay: 2
   _fireCooldown: 0.07

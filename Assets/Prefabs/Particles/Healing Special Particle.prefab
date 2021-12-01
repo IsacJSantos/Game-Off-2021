@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5418451061312133137}
   - component: {fileID: 5418451061312133136}
   m_Layer: 0
-  m_Name: Take Damage Player Particle
+  m_Name: Healing Special Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418451061312133167}
   serializedVersion: 7
-  lengthInSec: 0.1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -221,7 +221,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.3207547, g: 0.03177287, b: 0.03177287, a: 0.3529412}
+      minColor: {r: 1, g: 1, b: 1, a: 0.3529412}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -1361,8 +1361,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7169812, g: 0.1318975, b: 0.1318975, a: 1}
-        key1: {r: 0.5377358, g: 0, b: 0, a: 0.27450982}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0.27450982}
         key2: {r: 0, g: 0, b: 0, a: 0.67058825}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1538,7 +1538,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -6189289526238714443, guid: 45f309164f0d8ce4b8c60118f2f64be5, type: 3}
+    - sprite: {fileID: -6285070063975550627, guid: 45f309164f0d8ce4b8c60118f2f64be5, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
