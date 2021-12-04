@@ -519,9 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5aebf9e26d0c47a9560e2f06a11a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  takeDamageParticle: {fileID: 0}
   dieParticle: {fileID: 3340754481114216390}
-  takeTamageSound: {fileID: 0}
   dieSound: {fileID: 0}
   _lifeBar: {fileID: 0}
   _baseLife: 50
@@ -6066,14 +6064,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5aebf9e26d0c47a9560e2f06a11a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  takeDamageParticle: {fileID: 0}
   dieParticle: {fileID: 3340754481114216390}
-  takeTamageSound: {fileID: 0}
   dieSound: {fileID: 0}
   _lifeBar: {fileID: 0}
   _baseLife: 50
   _currentLife: 0
-  _maxLife: 50
+  _maxLife: 1
   _isAlive: 0
 --- !u!136 &7308931012260827978
 CapsuleCollider:
